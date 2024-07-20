@@ -23,3 +23,5 @@ rootProject.name = "PedometerApp"
 include(":app")
 include(":feature")
 include(":core")
+include(":core:domain")
+include(":core:model")
