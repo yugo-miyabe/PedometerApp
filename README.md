@@ -1,2 +1,2 @@
-# Pedometer_App
+# PedometerApp
 万歩計のアプリ
