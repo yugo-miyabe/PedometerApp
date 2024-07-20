@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "PedometerApp"
 include(":app")
 include(":feature")
+include(":core")
