@@ -1,9 +1,8 @@
-package jp.yuyuyu.pedometerapp.ui.theme
+package jp.yuyuyu.ui.util
 
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
-
 
 @Preview(
     apiLevel = 33,
