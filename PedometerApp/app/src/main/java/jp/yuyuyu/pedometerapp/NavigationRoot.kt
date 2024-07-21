@@ -1,11 +1,26 @@
 package jp.yuyuyu.pedometerapp
 
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import jp.yuyuyu.home.navigation.homeNavigation
+import jp.yuyuyu.pedometerapp.ui.theme.PedometerAppTheme
+
+@Composable
+fun PedometerApp(modifier: Modifier = Modifier) {
+    PedometerAppTheme {
+        Surface(
+            modifier = modifier.fillMaxSize(),
+        ) {
+            AppNavHost()
+        }
+    }
+}
+
 
 @Composable
 fun AppNavHost(
