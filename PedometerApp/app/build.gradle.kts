@@ -80,7 +80,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.navigation.compose)
+
     implementation(projects.core.common)
+    implementation(projects.core.designsystem)
     implementation(projects.feature.home)
     implementation(projects.feature.setting)
 

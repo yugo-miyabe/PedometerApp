@@ -7,7 +7,7 @@ import jp.yuyuyu.setting.SettingScreen
 fun NavGraphBuilder.settingNavigation() {
     composable(
         route = SettingRoutes.Home.route
-    ) { backStackEntry -> // backStackEntry パラメータを追加
+    ) { backStackEntry -> 
         SettingScreen()
     }
 }

@@ -8,12 +8,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import jp.yuyuyu.home.navigation.HomeRoutes
 import jp.yuyuyu.home.navigation.homeNavigation
-import jp.yuyuyu.pedometerapp.ui.theme.PedometerAppTheme
+import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.setting.navigation.settingNavigation
 
 @Composable
 fun PedometerApp(modifier: Modifier = Modifier) {
-    PedometerAppTheme {
+    jp.yuyuyu.designsystem.theme.PedometerAppTheme {
         Surface(
             modifier = modifier.fillMaxSize(),
         ) {

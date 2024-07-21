@@ -1,4 +1,4 @@
-package jp.yuyuyu.pedometerapp.ui.theme
+package jp.yuyuyu.designsystem.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
