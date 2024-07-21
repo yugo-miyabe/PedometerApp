@@ -18,7 +18,14 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "PedometerApp"
 include(":app")
- 
+include(":feature")
+include(":core")
+include(":core:domain")
+include(":core:model")
+include(":feature:home")
+include(":core:ui")
+include(":core:common")
