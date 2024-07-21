@@ -7,7 +7,7 @@ import jp.yuyuyu.home.HomeScreen
 fun NavGraphBuilder.homeNavigation() {
     composable(
         route = HomeRoutes.Home.route
-    ) { backStackEntry -> // backStackEntry パラメータを追加
+    ) { backStackEntry ->
         HomeScreen()
     }
 }
