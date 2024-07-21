@@ -4,9 +4,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import jp.yuyuyu.home.navigation.HomeRoutes
 import jp.yuyuyu.home.navigation.homeNavigation
 import jp.yuyuyu.pedometerapp.ui.theme.PedometerAppTheme
 
@@ -23,14 +23,11 @@ fun PedometerApp(modifier: Modifier = Modifier) {
 
 
 @Composable
-fun AppNavHost(
-    modifier: Modifier = Modifier,
-    navHostController: NavHostController = rememberNavController(),
-) {
+fun AppNavHost() {
+    val navController = rememberNavController()
     NavHost(
-        navController = navHostController,
-        startDestination = Screen.HOME_ROUTE.rootName,
-        modifier = modifier
+        navController = navController,
+        startDestination = HomeRoutes.Home.route,
     ) {
         homeNavigation()
     }
@@ -38,6 +35,6 @@ fun AppNavHost(
 }
 
 enum class Screen(val rootName: String) {
-    HOME_ROUTE(rootName = "home"),
+    HOME_ROUTE(rootName = "home_top"),
     SETTING_ROUTE(rootName = "setting")
 }

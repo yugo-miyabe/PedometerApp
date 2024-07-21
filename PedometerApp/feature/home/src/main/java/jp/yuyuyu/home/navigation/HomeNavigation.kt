@@ -6,17 +6,16 @@ import jp.yuyuyu.home.HomeScreen
 
 fun NavGraphBuilder.homeNavigation() {
     composable(
-        route = HomeRoutes.Home.route,
-    ) {
+        route = HomeRoutes.Home.route
+    ) { backStackEntry -> // backStackEntry パラメータを追加
         HomeScreen()
     }
 }
 
-sealed interface HomeRoutes {
+interface HomeRoutes {
     val route: String
 
     data object Home : HomeRoutes {
         override val route: String = "home_top"
     }
-
 }
