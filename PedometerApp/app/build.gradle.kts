@@ -30,6 +30,18 @@ android {
             )
         }
     }
+    flavorDimensions += listOf("environment")
+    productFlavors {
+        // 開発
+        create("develop") {
+            dimension = "environment"
+            applicationIdSuffix = ".develop"
+        }
+        // 本番
+        create("product") {
+            dimension = "environment"
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

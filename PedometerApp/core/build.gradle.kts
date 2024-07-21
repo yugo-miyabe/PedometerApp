@@ -5,10 +5,10 @@ plugins {
 
 android {
     namespace = "jp.yuyuyu.core"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 31
+        minSdk = libs.versions.minSdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -21,6 +21,17 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+    flavorDimensions += listOf("environment")
+    productFlavors {
+        // 開発
+        create("develop") {
+            dimension = "environment"
+        }
+        // 本番
+        create("product") {
+            dimension = "environment"
         }
     }
     compileOptions {
