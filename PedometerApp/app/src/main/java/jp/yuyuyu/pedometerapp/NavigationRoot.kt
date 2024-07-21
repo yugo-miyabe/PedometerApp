@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import jp.yuyuyu.home.navigation.HomeRoutes
 import jp.yuyuyu.home.navigation.homeNavigation
 import jp.yuyuyu.pedometerapp.ui.theme.PedometerAppTheme
+import jp.yuyuyu.setting.navigation.settingNavigation
 
 @Composable
 fun PedometerApp(modifier: Modifier = Modifier) {
@@ -30,8 +31,9 @@ fun AppNavHost() {
         startDestination = HomeRoutes.Home.route,
     ) {
         homeNavigation()
-    }
 
+        settingNavigation()
+    }
 }
 
 enum class Screen(val rootName: String) {
