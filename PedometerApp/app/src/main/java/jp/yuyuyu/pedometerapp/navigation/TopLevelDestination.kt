@@ -1,4 +1,4 @@
-package jp.yuyuyu.pedometerapp.util
+package jp.yuyuyu.pedometerapp.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
