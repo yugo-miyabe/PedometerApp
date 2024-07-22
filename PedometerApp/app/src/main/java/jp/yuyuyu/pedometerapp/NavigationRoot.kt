@@ -19,8 +19,3 @@ fun AppNavHost() {
         settingNavigation()
     }
 }
-
-enum class Screen(val rootName: String) {
-    HOME_ROUTE(rootName = "home_top"),
-    SETTING_ROUTE(rootName = "setting")
-}

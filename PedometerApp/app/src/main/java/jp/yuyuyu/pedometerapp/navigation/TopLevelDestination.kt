@@ -11,12 +11,12 @@ enum class TopLevelDestination(
     val unselectedIcon: ImageVector,
     val titleTextId: Int
 ) {
-    Home(
+    HOME(
         selectedIcon = Icons.Default.Home,
         unselectedIcon = Icons.Default.Home,
         titleTextId = R.string.home_tab
     ),
-    Setting(
+    SETTING(
         selectedIcon = Icons.Default.Settings,
         unselectedIcon = Icons.Default.Settings,
         titleTextId = R.string.setting_tab
