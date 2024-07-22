@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 @Composable
 fun SettingScreen() {
     Surface() {
-        Text(text = "Home")
+        Text(text = "Setting")
     }
 }
 

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "jp.yuyuyu.ui"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    namespace = "jp.yuyuyu.designsystem"
+    compileSdk = 34
 
     defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
+        minSdk = 31
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -51,7 +51,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.androidx.navigation.compose)
-    implementation(projects.core.common)
 
 }
