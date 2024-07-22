@@ -7,8 +7,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import jp.yuyuyu.common.R
 
 enum class TopLevelDestination(
-    val selectedIcon: ImageVector?,
-    val unselectedIcon: ImageVector?,
+    val selectedIcon: ImageVector,
+    val unselectedIcon: ImageVector,
     val titleTextId: Int
 ) {
     Home(
