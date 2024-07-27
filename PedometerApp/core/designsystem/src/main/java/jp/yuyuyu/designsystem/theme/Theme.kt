@@ -20,7 +20,7 @@ fun PedometerAppTheme(
     val context = LocalContext.current
     val colorScheme =
         if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-
+    /*
     val view = LocalView.current
     if (view.isInEditMode.not()) {
         SideEffect {
@@ -29,6 +29,7 @@ fun PedometerAppTheme(
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }
+    */
 
     MaterialTheme(
         colorScheme = colorScheme,
