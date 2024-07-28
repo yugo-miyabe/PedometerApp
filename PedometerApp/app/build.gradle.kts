@@ -1,9 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
-    kotlin("kapt")
+    id("com.google.devtools.ksp") version "1.9.0-1.0.12"
 }
 
 android {
@@ -84,14 +83,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+
+    ksp("com.google.dagger:dagger-compiler:2.48")// Dagger compiler
+    ksp("com.google.dagger:hilt-compiler:2.48") // Hilt compiler
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
     implementation(projects.feature.home)
     implementation(projects.feature.setting)
 
-}
-kapt {
-    correctErrorTypes = true
 }

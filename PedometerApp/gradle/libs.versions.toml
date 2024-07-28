@@ -20,7 +20,8 @@ appcompat = "1.7.0"
 material = "1.12.0"
 uiToolingPreviewAndroid = "1.6.8"
 material3AdaptiveNavigationSuiteAndroid = "1.3.0-beta04"
-hilt = "2.44"
+androidx-hilt-navigation-compose = "1.2.0"
+hilt = "2.51"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

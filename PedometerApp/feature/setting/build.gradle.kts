@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    kotlin("kapt")
+    id("com.google.devtools.ksp") version "1.9.0-1.0.12"
 }
 
 android {
@@ -50,7 +50,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.android.compiler)
 
     implementation(projects.core.common)
     implementation(projects.core.ui)
