@@ -1,5 +1,9 @@
 package jp.yuyuyu.home
 
+import android.Manifest
+import android.util.Log
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
@@ -15,11 +19,22 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun HomeScreen() {
+    val permissionLaunch =
+        rememberLauncherForActivityResult(contract = ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                Log.d("tag", isGranted.toString())
+            } else {
+                Log.d("tag", isGranted.toString())
+            }
+        }
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         val insetsPadding =
             WindowInsets.systemBars.only(
                 WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom
             ).asPaddingValues()
+
+        permissionLaunch.launch(Manifest.permission.ACTIVITY_RECOGNITION)
+
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
