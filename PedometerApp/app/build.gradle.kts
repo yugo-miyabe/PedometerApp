@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.hilt)
-    id("com.google.devtools.ksp") version "1.9.0-1.0.12"
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -83,9 +83,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt.android)
-
-    ksp("com.google.dagger:dagger-compiler:2.48")// Dagger compiler
-    ksp("com.google.dagger:hilt-compiler:2.48") // Hilt compiler
+    ksp(libs.dagger.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
