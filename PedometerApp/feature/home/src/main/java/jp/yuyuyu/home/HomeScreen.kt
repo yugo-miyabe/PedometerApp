@@ -13,9 +13,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import jp.yuyuyu.designsystem.theme.PedometerAppTheme
+import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
 fun HomeScreen() {
@@ -56,6 +59,16 @@ fun HomeScreen() {
             item {
                 Text(text = "Home_5")
             }
+        }
+    }
+}
+
+@PreviewDynamicTheme
+@Composable
+private fun HomePreview() {
+    PedometerAppTheme {
+        Surface {
+            HomeScreen()
         }
     }
 }
