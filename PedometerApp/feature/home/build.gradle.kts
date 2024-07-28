@@ -23,14 +23,14 @@ android {
             )
         }
     }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
     buildFeatures {
         compose = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
@@ -49,4 +49,6 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
     implementation(projects.core.common)
+    implementation(projects.core.ui)
+
 }

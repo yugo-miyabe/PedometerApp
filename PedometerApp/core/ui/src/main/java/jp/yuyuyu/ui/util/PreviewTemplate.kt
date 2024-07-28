@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
 
+
 @Preview(
     apiLevel = 33,
     name = "Red_Light",
@@ -16,7 +17,6 @@ import androidx.compose.ui.tooling.preview.Wallpapers
     name = "Blue_Light",
     wallpaper = Wallpapers.BLUE_DOMINATED_EXAMPLE,
     uiMode = Configuration.UI_MODE_NIGHT_NO,
-    showBackground = true,
 )
 @Preview(
     apiLevel = 33,
@@ -59,6 +59,6 @@ import androidx.compose.ui.tooling.preview.Wallpapers
     wallpaper = Wallpapers.YELLOW_DOMINATED_EXAMPLE,
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     showBackground = true,
-
-    )
+)
 annotation class PreviewDynamicTheme
+

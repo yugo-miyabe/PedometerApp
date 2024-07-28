@@ -1,30 +1,24 @@
 package jp.yuyuyu.home
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import android.Manifest
+import android.util.Log
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.LaunchedEffect
+import jp.yuyuyu.ui.content.HomeContent
 
 @Composable
 fun HomeScreen() {
-    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-        Column() {
-            Text(text = "Home")
-            Text(text = "Home")
-            Text(text = "Home")
-            Text(text = "Home")
-            Text(text = "Home")
-            Text(text = "Home")
+    val permissionLaunch =
+        rememberLauncherForActivityResult(contract = ActivityResultContracts.RequestPermission()) { isGranted ->
+            // TODO
+            Log.d("tag", isGranted.toString())
         }
+
+    HomeContent()
+
+    LaunchedEffect(Unit) {
+        permissionLaunch.launch(Manifest.permission.ACTIVITY_RECOGNITION)
     }
 }
-
-@Composable
-private fun Home_Preview() {
-
-}
-
-
-
