@@ -17,7 +17,7 @@ import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
-fun HomeContent() {
+fun HomeScreen() {
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         val insetsPadding =
             WindowInsets.systemBars.only(
@@ -54,7 +54,7 @@ fun HomeContent() {
 private fun HomePreview() {
     PedometerAppTheme {
         Surface {
-            HomeContent()
+            HomeScreen()
         }
     }
 }
