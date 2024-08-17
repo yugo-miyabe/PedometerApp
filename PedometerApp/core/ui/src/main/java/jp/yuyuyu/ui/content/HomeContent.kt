@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -17,7 +18,9 @@ import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onClick: () -> Unit
+) {
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         val insetsPadding =
             WindowInsets.systemBars.only(
@@ -43,7 +46,9 @@ fun HomeScreen() {
                 Text(text = "Home_4")
             }
             item {
-                Text(text = "Home_5")
+                Button(onClick = onClick) {
+                    Text(text = "Button")
+                }
             }
         }
     }
@@ -54,7 +59,9 @@ fun HomeScreen() {
 private fun HomePreview() {
     PedometerAppTheme {
         Surface {
-            HomeScreen()
+            HomeScreen(
+                onClick = {/* preview */ }
+            )
         }
     }
 }

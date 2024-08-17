@@ -5,6 +5,8 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.platform.LocalContext
+import androidx.health.connect.client.HealthConnectClient
 import androidx.health.connect.client.PermissionController
 import androidx.health.connect.client.permission.HealthPermission
 import androidx.health.connect.client.records.StepsRecord
@@ -16,6 +18,8 @@ import timber.log.Timber
 fun HomeRoot(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
+
     val healthPermission =
         setOf(
             HealthPermission.getReadPermission(StepsRecord::class),
@@ -33,8 +37,6 @@ fun HomeRoot(
                 // 許可されていない権限があるケース
                 Timber.d("all not granted")
             }
-
-
         }
 
     val permissionLaunch =
@@ -42,7 +44,15 @@ fun HomeRoot(
             // TODO
         }
 
-    HomeScreen()
+
+    HomeScreen(
+        onClick = {
+            // Health Connect Client のインスタンスを取得
+            val healthConnectClient = HealthConnectClient.getOrCreate(context)
+            // 歩数データを読み取り
+            viewModel.requestRecode(healthConnectClient)
+        }
+    )
 
     LaunchedEffect(Unit) {
         requestHealthPermissions.launch(healthPermission)
