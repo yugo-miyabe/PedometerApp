@@ -85,6 +85,7 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
+    implementation(libs.androidx.connect.client)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)

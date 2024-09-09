@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
+    implementation(libs.timber)
 
     implementation(projects.core.common)
     implementation(projects.core.ui)
