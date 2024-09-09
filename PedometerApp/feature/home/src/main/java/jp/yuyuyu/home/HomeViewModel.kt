@@ -15,17 +15,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor() : ViewModel() {
-    init {
-        /*
-        viewModelScope.launch {
-            readStepsByTimeRange(
-                healthConnectClient =,
-                startTime = startTime,
-                endTime = endTime
-            )
-        }
-        */
-    }
 
     fun requestRecode(healthConnectClient: HealthConnectClient) {
         viewModelScope.launch(Dispatchers.IO) {
