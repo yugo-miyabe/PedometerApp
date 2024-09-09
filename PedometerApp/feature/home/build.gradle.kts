@@ -57,5 +57,10 @@ dependencies {
 
     implementation(projects.core.common)
     implementation(projects.core.ui)
+    // orbit
+    implementation(libs.orbit.core)
+    implementation(libs.orbit.viewmodel)
+    implementation(libs.orbit.compose)
+    testImplementation(libs.orbit.test)
 
 }

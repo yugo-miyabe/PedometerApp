@@ -9,12 +9,23 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.orbitmvi.orbit.ContainerHost
+import org.orbitmvi.orbit.syntax.simple.intent
+import org.orbitmvi.orbit.viewmodel.container
 import timber.log.Timber
 import java.time.Instant
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor() : ViewModel() {
+class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEffect>, ViewModel() {
+
+    override val container = container<HomeState, HomeSideEffect>(HomeState())
+
+    fun hoge() {
+        intent {
+
+        }
+    }
 
     fun requestRecode(healthConnectClient: HealthConnectClient) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -42,4 +53,13 @@ class HomeViewModel @Inject constructor() : ViewModel() {
             }
         }
     }
+
+}
+
+data class HomeState(
+    val states: String = ""
+)
+
+sealed class HomeSideEffect {
+    data object HideRefreshIndicator : HomeSideEffect()
 }
