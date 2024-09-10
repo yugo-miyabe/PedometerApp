@@ -1,9 +1,11 @@
 package jp.yuyuyu.ui.template
 
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
@@ -15,12 +17,14 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
+import jp.yuyuyu.ui.model.HomeStep
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
 fun HomeTemplate(
-    list: List<String>,
+    list: List<HomeStep>,
     onClick: () -> Unit
 ) {
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -36,7 +40,10 @@ fun HomeTemplate(
             contentPadding = insetsPadding
         ) {
             items(list) {
-                Text(text = list.toString())
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(text = "startTime: " + it.startTime.toString())
+                Text(text = "endTime: " + it.endTime.toString())
+                Text(text = "steps: " + it.steps.toString())
             }
             item {
                 Text(text = "Home_1")
