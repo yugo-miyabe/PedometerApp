@@ -63,4 +63,6 @@ dependencies {
     implementation(libs.orbit.compose)
     testImplementation(libs.orbit.test)
 
+    implementation(libs.androidx.lifecycle.runtime.compose)
+
 }

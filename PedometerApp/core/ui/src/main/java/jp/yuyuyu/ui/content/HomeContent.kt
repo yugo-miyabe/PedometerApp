@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -19,6 +20,7 @@ import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
 fun HomeScreen(
+    list: List<String>,
     onClick: () -> Unit
 ) {
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -33,6 +35,9 @@ fun HomeScreen(
                 .padding(innerPadding),
             contentPadding = insetsPadding
         ) {
+            items(list){
+                Text(text = list.toString())
+            }
             item {
                 Text(text = "Home_1")
             }
@@ -60,6 +65,7 @@ private fun HomePreview() {
     PedometerAppTheme {
         Surface {
             HomeScreen(
+                list = emptyList(),
                 onClick = {/* preview */ }
             )
         }
