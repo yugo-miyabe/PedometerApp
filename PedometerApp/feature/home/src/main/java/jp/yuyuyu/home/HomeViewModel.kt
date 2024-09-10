@@ -7,6 +7,7 @@ import androidx.health.connect.client.time.TimeRangeFilter
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import jp.yuyuyu.ui.model.HomeStep
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
@@ -28,8 +29,8 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
             try {
                 // 読み取りたい期間を指定
                 val todayStart: LocalDateTime = LocalDateTime.of(LocalDate.now(), LocalTime.MIN)
-                val endTime: LocalDateTime = LocalDateTime.now()
-                val timeRangeFilter = TimeRangeFilter.between(todayStart, endTime)
+                val now: LocalDateTime = LocalDateTime.now()
+                val timeRangeFilter = TimeRangeFilter.between(todayStart, now)
                 // 歩数データの読み取りリクエストを作成
                 val request = ReadRecordsRequest(
                     recordType = StepsRecord::class,
@@ -45,7 +46,11 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
                     intent {
                         reduce {
                             state.copy(
-                                list = state.list + ("steps: $steps  startTime: $startTime  endTime: $endTime")
+                                list = state.list + HomeStep(
+                                    steps = steps,
+                                    startTime = startTime,
+                                    endTime = endTime
+                                )
                             )
                         }
                     }
@@ -61,7 +66,7 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
 }
 
 data class HomeState(
-    val list: List<String> = emptyList()
+    val list: List<HomeStep> = emptyList()
 )
 
 sealed class HomeSideEffect {
