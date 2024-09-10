@@ -1,4 +1,4 @@
-package jp.yuyuyu.ui.content
+package jp.yuyuyu.ui.template
 
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
@@ -8,8 +8,6 @@ import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -19,55 +17,44 @@ import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
-fun HomeScreen(
-    list: List<String>,
-    onClick: () -> Unit
-) {
+fun SettingContent() {
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         val insetsPadding =
             WindowInsets.systemBars.only(
                 WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom
             ).asPaddingValues()
-
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding),
             contentPadding = insetsPadding
         ) {
-            items(list){
-                Text(text = list.toString())
+            item {
+                Text(text = "Setting_1")
             }
             item {
-                Text(text = "Home_1")
+                Text(text = "Setting_2")
             }
             item {
-                Text(text = "Home_2")
+                Text(text = "Setting_3")
             }
             item {
-                Text(text = "Home_3")
+                Text(text = "Setting_4")
             }
             item {
-                Text(text = "Home_4")
-            }
-            item {
-                Button(onClick = onClick) {
-                    Text(text = "Button")
-                }
+                Text(text = "Setting_5")
             }
         }
     }
 }
 
+
 @PreviewDynamicTheme
 @Composable
-private fun HomePreview() {
+private fun Setting_Preview() {
     PedometerAppTheme {
         Surface {
-            HomeScreen(
-                list = emptyList(),
-                onClick = {/* preview */ }
-            )
+            SettingContent()
         }
     }
 }

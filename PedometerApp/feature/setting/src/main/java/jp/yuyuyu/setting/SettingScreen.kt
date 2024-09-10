@@ -2,7 +2,7 @@ package jp.yuyuyu.setting
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
-import jp.yuyuyu.ui.content.SettingContent
+import jp.yuyuyu.ui.template.SettingContent
 
 @Composable
 fun SettingScreen(

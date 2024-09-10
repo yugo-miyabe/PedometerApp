@@ -13,7 +13,7 @@ import androidx.health.connect.client.permission.HealthPermission
 import androidx.health.connect.client.records.StepsRecord
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import jp.yuyuyu.ui.content.HomeScreen
+import jp.yuyuyu.ui.template.HomeTemplate
 import timber.log.Timber
 
 @Composable
@@ -54,7 +54,7 @@ fun HomeRoot(
         viewModel.requestRecode(healthConnectClient)
     }
 
-    HomeScreen(
+    HomeTemplate(
         list = state.list,
         onClick = {
 
