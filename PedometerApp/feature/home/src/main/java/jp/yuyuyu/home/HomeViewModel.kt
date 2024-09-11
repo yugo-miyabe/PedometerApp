@@ -17,6 +17,8 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 import timber.log.Timber
 import java.time.Instant
+import java.time.LocalDate
+import java.time.ZoneId
 import javax.inject.Inject
 
 @HiltViewModel
@@ -32,8 +34,11 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
     fun requestRecode(healthConnectClient: HealthConnectClient) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
+                val today = LocalDate.now(ZoneId.of(ZONE_ID))
+                val startOfToday = today.atStartOfDay()
+                val startTime: Instant = startOfToday.atZone(ZoneId.of(ZONE_ID)).toInstant()
+
                 // 読み取りたい期間を指定
-                val startTime = Instant.now().minusSeconds(60 * 60 * 24) // 24時間前
                 val endTime = Instant.now()
                 val timeRangeFilter = TimeRangeFilter.between(startTime, endTime)
                 // 歩数データの読み取りリクエストを作成
@@ -65,6 +70,10 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
                 Timber.d(e.message)
             }
         }
+    }
+
+    companion object {
+        val ZONE_ID = "Asia/Tokyo"
     }
 
 }
