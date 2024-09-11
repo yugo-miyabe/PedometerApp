@@ -17,7 +17,7 @@ import org.orbitmvi.orbit.compose.collectSideEffect
 import timber.log.Timber
 
 @Composable
-fun HomeRoot(
+fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
