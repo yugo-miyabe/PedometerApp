@@ -73,7 +73,7 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
     }
 
     companion object {
-        val ZONE_ID = "Asia/Tokyo"
+        const val ZONE_ID = "Asia/Tokyo"
     }
 
 }
