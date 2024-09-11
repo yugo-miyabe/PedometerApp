@@ -12,18 +12,22 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent
+import org.orbitmvi.orbit.syntax.simple.postSideEffect
 import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 import timber.log.Timber
 import java.time.Instant
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.LocalTime
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEffect>, ViewModel() {
     override val container = container<HomeState, HomeSideEffect>(HomeState())
+
+    init {
+        intent {
+            postSideEffect(HomeSideEffect.RequestPermission)
+        }
+    }
 
     fun requestRecode(healthConnectClient: HealthConnectClient) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -56,7 +60,6 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
                         }
                     }
                 }
-
             } catch (e: Exception) {
                 // エラーハンドリング
                 Timber.d(e.message)
@@ -71,5 +74,5 @@ data class HomeState(
 )
 
 sealed class HomeSideEffect {
-    data object HideRefreshIndicator : HomeSideEffect()
+    data object RequestPermission : HomeSideEffect()
 }
