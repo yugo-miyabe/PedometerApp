@@ -4,21 +4,24 @@ import android.Manifest.permission.ACTIVITY_RECOGNITION
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.health.connect.client.HealthConnectClient
 import androidx.health.connect.client.PermissionController
 import androidx.health.connect.client.permission.HealthPermission
 import androidx.health.connect.client.records.StepsRecord
 import androidx.hilt.navigation.compose.hiltViewModel
-import jp.yuyuyu.ui.content.HomeScreen
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import jp.yuyuyu.ui.template.HomeTemplate
+import org.orbitmvi.orbit.compose.collectSideEffect
 import timber.log.Timber
 
 @Composable
-fun HomeRoot(
+fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
+    val state by viewModel.container.stateFlow.collectAsStateWithLifecycle()
 
     val healthPermission =
         setOf(
@@ -44,8 +47,17 @@ fun HomeRoot(
             // TODO
         }
 
+    viewModel.collectSideEffect {
+        when (it) {
+            HomeSideEffect.RequestPermission -> {
+                requestHealthPermissions.launch(healthPermission)
+                permissionLaunch.launch(ACTIVITY_RECOGNITION)
+            }
+        }
+    }
 
-    HomeScreen(
+    HomeTemplate(
+        list = state.list,
         onClick = {
             // Health Connect Client のインスタンスを取得
             val healthConnectClient = HealthConnectClient.getOrCreate(context)
@@ -53,9 +65,4 @@ fun HomeRoot(
             viewModel.requestRecode(healthConnectClient)
         }
     )
-
-    LaunchedEffect(Unit) {
-        requestHealthPermissions.launch(healthPermission)
-        permissionLaunch.launch(ACTIVITY_RECOGNITION)
-    }
 }

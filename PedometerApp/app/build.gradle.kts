@@ -51,6 +51,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -86,6 +87,7 @@ dependencies {
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.connect.client)
+    implementation(libs.timber)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)

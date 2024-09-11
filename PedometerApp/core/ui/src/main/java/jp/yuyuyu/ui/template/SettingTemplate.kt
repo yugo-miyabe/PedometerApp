@@ -1,4 +1,4 @@
-package jp.yuyuyu.ui.content
+package jp.yuyuyu.ui.template
 
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides

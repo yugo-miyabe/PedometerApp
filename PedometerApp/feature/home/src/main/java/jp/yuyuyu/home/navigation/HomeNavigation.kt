@@ -5,7 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import jp.yuyuyu.home.HomeRoot
+import jp.yuyuyu.home.HomeScreen
 
 @Composable
 fun HomeNavHost(
@@ -18,7 +18,7 @@ fun HomeNavHost(
         composable(
             route = HomeRoutes.Home.route
         ) { backStackEntry ->
-            HomeRoot()
+            HomeScreen()
         }
     }
 
@@ -28,7 +28,7 @@ fun NavGraphBuilder.homeNavigation() {
     composable(
         route = HomeRoutes.Home.route
     ) { backStackEntry ->
-        HomeRoot()
+        HomeScreen()
     }
 }
 
