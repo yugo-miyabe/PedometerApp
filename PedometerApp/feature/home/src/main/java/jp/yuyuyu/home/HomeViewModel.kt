@@ -15,6 +15,7 @@ import org.orbitmvi.orbit.syntax.simple.intent
 import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 import timber.log.Timber
+import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
@@ -28,9 +29,9 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 // 読み取りたい期間を指定
-                val todayStart: LocalDateTime = LocalDateTime.of(LocalDate.now(), LocalTime.MIN)
-                val now: LocalDateTime = LocalDateTime.now()
-                val timeRangeFilter = TimeRangeFilter.between(todayStart, now)
+                val startTime = Instant.now().minusSeconds(60 * 60 * 24) // 24時間前
+                val endTime = Instant.now()
+                val timeRangeFilter = TimeRangeFilter.between(startTime, endTime)
                 // 歩数データの読み取りリクエストを作成
                 val request = ReadRecordsRequest(
                     recordType = StepsRecord::class,
