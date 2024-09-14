@@ -89,10 +89,17 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.connect.client)
     implementation(libs.timber)
+    detektPlugins(libs.detekt.formatting)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
     implementation(projects.feature.home)
     implementation(projects.feature.setting)
 
+}
+
+detekt {
+    config.setFrom("${rootProject.projectDir}/config/detekt/detekt.yml")
+    autoCorrect = true
+    buildUponDefaultConfig = true
 }
