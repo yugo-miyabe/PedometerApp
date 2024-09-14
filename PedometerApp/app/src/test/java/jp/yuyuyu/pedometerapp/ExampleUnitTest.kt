@@ -1,6 +1,6 @@
 package jp.yuyuyu.pedometerapp
 
-import org.junit.Assert.*
+import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
 /**
