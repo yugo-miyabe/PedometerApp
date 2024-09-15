@@ -24,3 +24,11 @@ allprojects {
         apply(plugin = "io.gitlab.arturbosch.detekt")
     }
 }
+
+gradle.projectsEvaluated {
+    subprojects {
+        tasks.named("preBuild") {
+            dependsOn("detekt")
+        }
+    }
+}

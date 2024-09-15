@@ -334,6 +334,7 @@ naming:
     excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**' ]
     functionPattern: '[a-z][a-zA-Z0-9]*'
     excludeClassPattern: '$^'
+    ignoreFunction: [ 'Composable' ]
   FunctionParameterNaming:
     active: true
     parameterPattern: '[a-z][A-Za-z0-9]*'
@@ -733,7 +734,7 @@ style:
     active: false
   UnusedParameter:
     active: true
-    allowedNames: 'ignored|expected|modifier'
+    allowedNames: 'ignored|expected|modifier|viewModel'
   UnusedPrivateClass:
     active: true
   UnusedPrivateMember:
