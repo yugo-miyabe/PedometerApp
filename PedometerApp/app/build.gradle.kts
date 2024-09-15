@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.detekt)
 }
 
 android {
@@ -88,10 +89,17 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.connect.client)
     implementation(libs.timber)
+    detektPlugins(libs.detekt.formatting)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
     implementation(projects.feature.home)
     implementation(projects.feature.setting)
 
+}
+
+detekt {
+    config.setFrom("${rootProject.projectDir}/config/detekt/detekt.yml")
+    autoCorrect = true
+    buildUponDefaultConfig = true
 }

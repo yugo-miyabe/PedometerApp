@@ -61,4 +61,3 @@ import androidx.compose.ui.tooling.preview.Wallpapers
     showBackground = true,
 )
 annotation class PreviewDynamicTheme
-
