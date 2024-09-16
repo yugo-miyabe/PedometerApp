@@ -54,6 +54,8 @@ dependencies {
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
     implementation(libs.timber)
+    implementation(libs.kotlinx.serialization.json)
+
 
     implementation(projects.core.common)
     implementation(projects.core.ui)

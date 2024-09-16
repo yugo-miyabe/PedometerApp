@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -55,6 +56,7 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.timber)
     implementation(libs.androidx.connect.client)
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(projects.core.common)
     implementation(projects.core.ui)

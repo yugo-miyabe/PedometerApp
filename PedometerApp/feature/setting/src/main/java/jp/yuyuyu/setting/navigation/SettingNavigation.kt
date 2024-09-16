@@ -1,11 +1,14 @@
 package jp.yuyuyu.setting.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import jp.yuyuyu.setting.SettingScreen
+import kotlinx.serialization.Serializable
+
+@Serializable
+private data object Setting
 
 @Composable
 fun SettingNavHost(
@@ -13,28 +16,10 @@ fun SettingNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = SettingRoutes.Setting.route
+        startDestination = Setting
     ) {
-        composable(
-            route = SettingRoutes.Setting.route
-        ) {
+        composable<Setting> {
             SettingScreen()
         }
-    }
-}
-
-fun NavGraphBuilder.settingNavigation() {
-    composable(
-        route = SettingRoutes.Setting.route
-    ) {
-        SettingScreen()
-    }
-}
-
-interface SettingRoutes {
-    val route: String
-
-    data object Setting : SettingRoutes {
-        override val route: String = "setting_top"
     }
 }
