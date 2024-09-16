@@ -1,4 +1,4 @@
-package jp.yuyuyu.ui.extension
+package jp.yuyuyu.common.extension
 
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
