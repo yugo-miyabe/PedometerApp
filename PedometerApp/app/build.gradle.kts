@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.detekt)
+    kotlin("plugin.serialization") version "2.0.20"
 }
 
 android {
@@ -90,6 +91,7 @@ dependencies {
     implementation(libs.androidx.connect.client)
     implementation(libs.timber)
     detektPlugins(libs.detekt.formatting)
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
