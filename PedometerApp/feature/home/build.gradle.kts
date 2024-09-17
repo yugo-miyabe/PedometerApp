@@ -65,7 +65,7 @@ dependencies {
     implementation(libs.orbit.viewmodel)
     implementation(libs.orbit.compose)
     testImplementation(libs.orbit.test)
-
+    // lifecycle-runtime-compose
     implementation(libs.androidx.lifecycle.runtime.compose)
 
 }
