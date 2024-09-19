@@ -1,10 +1,10 @@
-package com.example.timeline
+package jp.yuyuyu.timeline
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-fun TimelineScreen(
+fun TimeLineScreen(
     viewModel: TimeLineViewModel = hiltViewModel()
 ) {
 
