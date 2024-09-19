@@ -10,7 +10,7 @@ import kotlinx.serialization.Serializable
 private data object TimeLine
 
 @Composable
-fun TimeLineNavigation(
+fun TimeLineNavHost(
     navController: NavHostController
 ) {
     NavHost(
