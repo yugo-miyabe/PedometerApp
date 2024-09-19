@@ -1,4 +1,4 @@
-package com.example.timeline
+package jp.yuyuyu.timeline
 
 import junit.framework.TestCase.assertEquals
 import org.junit.Test

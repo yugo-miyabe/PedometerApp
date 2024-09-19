@@ -99,7 +99,7 @@ dependencies {
     implementation(projects.core.designsystem)
     implementation(projects.feature.home)
     implementation(projects.feature.setting)
-
+    implementation(projects.feature.timeline)
 }
 
 detekt {
