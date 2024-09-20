@@ -18,7 +18,7 @@
     - 実質的にtemplatesが各画面のUIの定義となる。ただしViewModelには依存しないようにすること（templates単独でPreviewを可能にするため）
     - ダイアログのうち文言などを固定して他で使いまわせないものもこの粒度とする
     - 命名としてpostfixにTemplateをつけること
-pages
+- pages
     - ViewModelを取得してtemplatesのパラメータに実際の値を入れる
     - ダイアログの表示コントロールもここで実施する
     - orbit-mviの副作用の処理もここでおこなう（補足：orbit-mviというMVIライブラリを使ったのでそのライブラリ特有処理のこと）
