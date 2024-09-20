@@ -1,4 +1,4 @@
-package jp.yuyuyu.system
+package jp.yuyuyu.timeline
 
 import junit.framework.TestCase.assertEquals
 import org.junit.Test

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.org.jetbrains.kotlin.android)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -52,6 +53,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.navigation.compose)
+
+    implementation(libs.androidx.material.icons.extended)
+
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)

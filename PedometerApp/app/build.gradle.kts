@@ -1,9 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -76,6 +78,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.material3.adaptive.navigation.suite.android)
+    implementation(libs.androidx.material.icons.extended)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -90,12 +93,13 @@ dependencies {
     implementation(libs.androidx.connect.client)
     implementation(libs.timber)
     detektPlugins(libs.detekt.formatting)
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
     implementation(projects.feature.home)
     implementation(projects.feature.setting)
-
+    implementation(projects.feature.timeline)
 }
 
 detekt {

@@ -1,25 +1,25 @@
-package jp.yuyuyu.home.navigation
+package jp.yuyuyu.timeline.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import jp.yuyuyu.home.HomeScreen
+import jp.yuyuyu.timeline.TimeLineScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
-private data object Home
+private data object TimeLine
 
 @Composable
-fun HomeNavHost(
+fun TimeLineNavHost(
     navController: NavHostController
 ) {
     NavHost(
         navController = navController,
-        startDestination = Home
+        startDestination = TimeLine
     ) {
-        composable<Home> { backStackEntry ->
-            HomeScreen()
+        composable<TimeLine> {
+            TimeLineScreen()
         }
     }
 }

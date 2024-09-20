@@ -17,12 +17,13 @@ import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
-fun SettingTemplate() {
+fun TimeLineTemplate() {
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         val insetsPadding =
             WindowInsets.systemBars.only(
                 WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom
             ).asPaddingValues()
+
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -30,31 +31,27 @@ fun SettingTemplate() {
             contentPadding = insetsPadding
         ) {
             item {
-                Text(text = "Setting_1")
+                Text(text = "TimeLine_1")
             }
             item {
-                Text(text = "Setting_2")
+                Text(text = "TimeLine_2")
             }
             item {
-                Text(text = "Setting_3")
+                Text(text = "TimeLine_3")
             }
             item {
-                Text(text = "Setting_4")
-            }
-            item {
-                Text(text = "Setting_5")
+                Text(text = "TimeLine_4")
             }
         }
     }
 }
 
-
 @PreviewDynamicTheme
 @Composable
-private fun Setting_Preview() {
+private fun HomePreview() {
     PedometerAppTheme {
         Surface {
-            SettingTemplate()
+            TimeLineTemplate()
         }
     }
 }
