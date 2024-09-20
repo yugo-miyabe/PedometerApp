@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.home.navigation.HomeNavHost
 import jp.yuyuyu.setting.navigation.SettingNavHost
+import jp.yuyuyu.timeline.navigation.TimeLineNavHost
 
 @Composable
 fun PedometerApp(modifier: Modifier = Modifier) {
@@ -43,6 +44,12 @@ fun PedometerApp(modifier: Modifier = Modifier) {
                 TopLevelDestination.HOME -> {
                     HomeNavHost(
                         navController = rememberNavController(),
+                    )
+                }
+
+                TopLevelDestination.TIMELINE -> {
+                    TimeLineNavHost(
+                        navController = rememberNavController()
                     )
                 }
 
