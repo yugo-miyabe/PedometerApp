@@ -20,7 +20,7 @@ enum class TopLevelDestination(
     ),
     TIMELINE(
         selectedIcon = Icons.Default.Timeline,
-        unselectedIcon = Icons.Outlined.Timeline,
+        unselectedIcon = Icons.Default.Timeline,
         titleTextId = R.string.time_line_tab
     ),
     SETTING(
