@@ -11,53 +11,55 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.rememberNavController
-import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.home.navigation.HomeNavHost
 import jp.yuyuyu.setting.navigation.SettingNavHost
 import jp.yuyuyu.timeline.navigation.TimeLineNavHost
+import timber.log.Timber
 
 @Composable
 fun PedometerApp(modifier: Modifier = Modifier) {
-    PedometerAppTheme {
-        var currentDestination by rememberSaveable { mutableStateOf(TopLevelDestination.HOME) }
+    var currentDestination by rememberSaveable { mutableStateOf(TopLevelDestination.HOME) }
 
-        NavigationSuiteScaffold(
-            navigationSuiteItems = {
-                TopLevelDestination.entries.forEach { topLevelDestination ->
-                    item(
-                        icon = {
-                            Icon(
-                                imageVector = topLevelDestination.selectedIcon,
-                                contentDescription = null,
-                            )
-                        },
-                        label = { Text(text = stringResource(id = topLevelDestination.titleTextId)) },
-                        selected = topLevelDestination == currentDestination,
-                        onClick = {
-                            currentDestination = topLevelDestination
-                        }
-                    )
-                }
+    val navController = rememberNavController()
+    NavigationSuiteScaffold(
+        navigationSuiteItems = {
+            TopLevelDestination.entries.forEach { topLevelDestination ->
+                item(
+                    icon = {
+                        Icon(
+                            imageVector = topLevelDestination.selectedIcon,
+                            contentDescription = null,
+                        )
+                    },
+                    label = { Text(text = stringResource(id = topLevelDestination.titleTextId)) },
+                    selected = topLevelDestination == currentDestination,
+                    onClick = {
+                        currentDestination = topLevelDestination
+                    }
+                )
             }
-        ) {
-            when (currentDestination) {
-                TopLevelDestination.HOME -> {
-                    HomeNavHost(
-                        navController = rememberNavController(),
-                    )
-                }
+        }
+    ) {
+        when (currentDestination) {
+            TopLevelDestination.HOME -> {
+                Timber.d("miyabe: HOME")
+                HomeNavHost(
+                    navController = navController,
+                )
+            }
 
-                TopLevelDestination.TIMELINE -> {
-                    TimeLineNavHost(
-                        navController = rememberNavController()
-                    )
-                }
+            TopLevelDestination.TIMELINE -> {
+                Timber.d("miyabe: TIMELINE")
+                TimeLineNavHost(
+                    navController = navController
+                )
+            }
 
-                TopLevelDestination.SETTING -> {
-                    SettingNavHost(
-                        navController = rememberNavController(),
-                    )
-                }
+            TopLevelDestination.SETTING -> {
+                Timber.d("miyabe: SETTING")
+                SettingNavHost(
+                    navController = navController,
+                )
             }
         }
     }
