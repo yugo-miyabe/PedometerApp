@@ -14,7 +14,6 @@ import androidx.navigation.compose.rememberNavController
 import jp.yuyuyu.home.navigation.HomeNavHost
 import jp.yuyuyu.setting.navigation.SettingNavHost
 import jp.yuyuyu.timeline.navigation.TimeLineNavHost
-import timber.log.Timber
 
 @Composable
 fun PedometerApp(modifier: Modifier = Modifier) {
@@ -42,21 +41,18 @@ fun PedometerApp(modifier: Modifier = Modifier) {
     ) {
         when (currentDestination) {
             TopLevelDestination.HOME -> {
-                Timber.d("miyabe: HOME")
                 HomeNavHost(
                     navController = navController,
                 )
             }
 
             TopLevelDestination.TIMELINE -> {
-                Timber.d("miyabe: TIMELINE")
                 TimeLineNavHost(
                     navController = navController
                 )
             }
 
             TopLevelDestination.SETTING -> {
-                Timber.d("miyabe: SETTING")
                 SettingNavHost(
                     navController = navController,
                 )
