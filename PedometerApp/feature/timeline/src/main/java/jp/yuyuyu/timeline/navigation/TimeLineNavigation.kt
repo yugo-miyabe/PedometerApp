@@ -8,7 +8,7 @@ import jp.yuyuyu.timeline.TimeLineScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
-private data object TimeLine
+private data object TimeLineRote
 
 @Composable
 fun TimeLineNavHost(
@@ -16,9 +16,9 @@ fun TimeLineNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = TimeLine
+        startDestination = TimeLineRote
     ) {
-        composable<TimeLine> {
+        composable<TimeLineRote> {
             TimeLineScreen()
         }
     }

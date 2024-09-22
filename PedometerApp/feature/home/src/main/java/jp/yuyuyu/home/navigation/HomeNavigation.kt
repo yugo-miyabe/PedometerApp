@@ -8,7 +8,7 @@ import jp.yuyuyu.home.HomeScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
-private data object Home
+private data object HomeRote
 
 @Composable
 fun HomeNavHost(
@@ -16,9 +16,9 @@ fun HomeNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Home
+        startDestination = HomeRote
     ) {
-        composable<Home> { backStackEntry ->
+        composable<HomeRote> { backStackEntry ->
             HomeScreen()
         }
     }

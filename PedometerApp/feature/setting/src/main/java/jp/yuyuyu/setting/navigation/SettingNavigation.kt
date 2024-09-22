@@ -8,7 +8,7 @@ import jp.yuyuyu.setting.SettingScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
-private data object Setting
+private data object SettingRote
 
 @Composable
 fun SettingNavHost(
@@ -16,9 +16,9 @@ fun SettingNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Setting
+        startDestination = SettingRote
     ) {
-        composable<Setting> {
+        composable<SettingRote> {
             SettingScreen()
         }
     }
