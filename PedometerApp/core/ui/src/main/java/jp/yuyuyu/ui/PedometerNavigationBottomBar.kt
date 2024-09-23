@@ -7,10 +7,11 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
+import jp.yuyuyu.ui.util.TopLevelDestination
 
 @Composable
 fun PedometerNavigationBottomBar(
-    selectedItem: TopLevelDestination = TopLevelDestination.Home
+    selectedItem: TopLevelDestination = TopLevelDestination.HOME
 ) {
     NavigationBar(
         modifier = Modifier.fillMaxWidth(),

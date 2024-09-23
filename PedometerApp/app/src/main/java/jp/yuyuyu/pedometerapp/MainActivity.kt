@@ -11,7 +11,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
-import jp.yuyuyu.pedometerapp.navigation.PedometerApp
+import jp.yuyuyu.pedometerapp.navigation.RootPage
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
             PedometerAppTheme {
                 CompositionLocalProvider {
                     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                        PedometerApp(Modifier.padding(innerPadding))
+                        RootPage(Modifier.padding(innerPadding))
                     }
                 }
             }
