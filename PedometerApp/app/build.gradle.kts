@@ -95,6 +95,7 @@ dependencies {
     detektPlugins(libs.detekt.formatting)
     implementation(libs.kotlinx.serialization.json)
 
+    implementation(projects.core.ui)
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
     implementation(projects.feature.home)

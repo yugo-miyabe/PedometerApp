@@ -7,6 +7,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+import kotlinx.serialization.Serializable
 
 @Composable
 fun PedometerApp(modifier: Modifier = Modifier) {
@@ -17,7 +20,6 @@ fun PedometerApp(modifier: Modifier = Modifier) {
 fun RootPage(modifier: Modifier) {
     Scaffold(
         bottomBar = {
-            // TODO BottomBar
         },
         content = { innerPadding ->
             LazyColumn(
@@ -45,3 +47,20 @@ fun RootPage(modifier: Modifier) {
         },
     )
 }
+
+@Composable
+fun PedometerNavHost(
+    modifier: Modifier = Modifier,
+) {
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = AppRoute,
+        modifier = modifier
+    ) {
+        navigationRootNavGraph()
+    }
+}
+
+@Serializable
+data object AppRoute

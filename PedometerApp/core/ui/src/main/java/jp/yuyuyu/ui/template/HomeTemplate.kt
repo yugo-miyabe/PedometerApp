@@ -27,7 +27,9 @@ fun HomeTemplate(
     list: List<HomeStep>,
     onClick: () -> Unit
 ) {
-    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+    ) { innerPadding ->
         val insetsPadding =
             WindowInsets.systemBars.only(
                 WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom
