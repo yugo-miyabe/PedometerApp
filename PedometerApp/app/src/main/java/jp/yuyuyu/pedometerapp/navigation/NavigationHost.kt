@@ -37,26 +37,27 @@ fun PedometerApp(modifier: Modifier = Modifier) {
                     }
                 )
             }
-        }
-    ) {
-        when (currentDestination) {
-            TopLevelDestination.HOME -> {
-                HomeNavHost(
-                    navController = navController,
-                )
-            }
+        },
+        content = {
+            when (currentDestination) {
+                TopLevelDestination.HOME -> {
+                    HomeNavHost(
+                        navController = navController,
+                    )
+                }
 
-            TopLevelDestination.TIMELINE -> {
-                TimeLineNavHost(
-                    navController = navController
-                )
-            }
+                TopLevelDestination.TIMELINE -> {
+                    TimeLineNavHost(
+                        navController = navController
+                    )
+                }
 
-            TopLevelDestination.SETTING -> {
-                SettingNavHost(
-                    navController = navController,
-                )
+                TopLevelDestination.SETTING -> {
+                    SettingNavHost(
+                        navController = navController,
+                    )
+                }
             }
         }
-    }
+    )
 }
