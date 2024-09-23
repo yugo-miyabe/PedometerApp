@@ -1,4 +1,4 @@
-package jp.yuyuyu.pedometerapp.navigation
+package jp.yuyuyu.pedometerapp
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -9,17 +9,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
-import jp.yuyuyu.pedometerapp.AppState
-import jp.yuyuyu.pedometerapp.TopLevelDestination
+import jp.yuyuyu.pedometerapp.navigation.PedometerNavHost
 import kotlin.reflect.KClass
 
 @Composable
-fun NavigationRootPage(
+fun PedometerApp(
     appState: AppState,
     modifier: Modifier = Modifier,
 ) {
     val currentDestination = appState.currentDestination
-
     NavigationSuiteScaffold(
         navigationSuiteItems = {
             TopLevelDestination.entries.forEach { topLevelDestination ->

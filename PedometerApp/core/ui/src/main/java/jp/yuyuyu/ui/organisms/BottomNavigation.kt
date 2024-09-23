@@ -1,5 +1,6 @@
 package jp.yuyuyu.ui.organisms
 
+/*
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -10,16 +11,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
-import jp.yuyuyu.ui.util.TopLevelDestination
+import jp.yuyuyu.pedometerapp.TopLevelDestination
 
 @Composable
 fun BottomNavigation(
-    topLevelDestinations: TopLevelDestination,
-    onItemSelected: (TopLevelDestination) -> Unit,
+    topLevelDestinations: jp.yuyuyu.pedometerapp.TopLevelDestination,
+    onItemSelected: (jp.yuyuyu.pedometerapp.TopLevelDestination) -> Unit,
     modifier: Modifier = Modifier
 ) {
     NavigationBar(modifier = modifier) {
-        for (item in TopLevelDestination.entries) {
+        for (item in jp.yuyuyu.pedometerapp.TopLevelDestination.entries) {
             NavigationBarItem(
                 selected = topLevelDestinations == item,
                 onClick = {
@@ -42,9 +43,11 @@ fun BottomNavigation(
 @PreviewDynamicTheme
 @Composable
 private fun BottomNavigation_Preview() {
-    val selectedItem = remember { mutableStateOf(TopLevelDestination.HOME) }
+    val selectedItem = remember { mutableStateOf(jp.yuyuyu.pedometerapp.TopLevelDestination.HOME) }
     BottomNavigation(
         topLevelDestinations = selectedItem.value,
         onItemSelected = selectedItem::value::set
     )
 }
+
+*/

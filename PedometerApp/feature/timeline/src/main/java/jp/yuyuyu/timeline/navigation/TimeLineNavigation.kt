@@ -1,24 +1,21 @@
 package jp.yuyuyu.timeline.navigation
 
-import androidx.compose.runtime.Composable
-import androidx.navigation.compose.NavHost
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import jp.yuyuyu.timeline.TimeLineScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
-private data object TimeLineRoute
+data object TimeLineRoute
 
-@Composable
-fun TimeLineNavHost() {
-    val navController = rememberNavController()
-    NavHost(
-        navController = navController,
-        startDestination = TimeLineRoute
-    ) {
-        composable<TimeLineRoute> {
-            TimeLineScreen()
-        }
+fun NavController.navigateToTimeLineScreen(navOptions: NavOptions) {
+    navigate(route = TimeLineRoute, navOptions)
+}
+
+fun NavGraphBuilder.timeLineScreen() {
+    composable<TimeLineRoute>() {
+        TimeLineScreen()
     }
 }
