@@ -4,7 +4,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Timeline
-import androidx.compose.material.icons.outlined.Timeline
 import androidx.compose.ui.graphics.vector.ImageVector
 import jp.yuyuyu.common.R
 
