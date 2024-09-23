@@ -1,23 +1,23 @@
-package jp.yuyuyu.pedometerapp
+package jp.yuyuyu.pedometerapp.navigation
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
-import jp.yuyuyu.pedometerapp.navigation.PedometerNavHost
+import jp.yuyuyu.pedometerapp.AppState
+import jp.yuyuyu.pedometerapp.TopLevelDestination
 import kotlin.reflect.KClass
 
 @Composable
-fun PedometerApp(
+fun NavigationRootPage(
     appState: AppState,
-    modifier: Modifier = Modifier,
 ) {
     val currentDestination = appState.currentDestination
+
     NavigationSuiteScaffold(
         navigationSuiteItems = {
             TopLevelDestination.entries.forEach { topLevelDestination ->

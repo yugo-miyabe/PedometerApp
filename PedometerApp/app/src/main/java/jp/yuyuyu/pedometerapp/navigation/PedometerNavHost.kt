@@ -8,7 +8,6 @@ import jp.yuyuyu.home.navigation.homeScreen
 import jp.yuyuyu.pedometerapp.AppState
 import jp.yuyuyu.setting.navigation.settingScreen
 import jp.yuyuyu.timeline.navigation.timeLineScreen
-import kotlinx.serialization.Serializable
 
 @Composable
 fun PedometerNavHost(
@@ -26,6 +25,3 @@ fun PedometerNavHost(
         settingScreen()
     }
 }
-
-@Serializable
-data object AppRoute
