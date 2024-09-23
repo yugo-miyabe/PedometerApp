@@ -40,23 +40,9 @@ fun PedometerApp(modifier: Modifier = Modifier) {
         },
         content = {
             when (currentDestination) {
-                TopLevelDestination.HOME -> {
-                    HomeNavHost(
-                        navController = navController,
-                    )
-                }
-
-                TopLevelDestination.TIMELINE -> {
-                    TimeLineNavHost(
-                        navController = navController
-                    )
-                }
-
-                TopLevelDestination.SETTING -> {
-                    SettingNavHost(
-                        navController = navController,
-                    )
-                }
+                TopLevelDestination.HOME -> HomeNavHost(navController = navController)
+                TopLevelDestination.TIMELINE -> TimeLineNavHost(navController = navController)
+                TopLevelDestination.SETTING -> SettingNavHost(navController = navController)
             }
         }
     )
