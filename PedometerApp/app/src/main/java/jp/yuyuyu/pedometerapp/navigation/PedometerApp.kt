@@ -18,30 +18,25 @@ fun NavigationRootPage(
 ) {
     val currentDestination = appState.currentDestination
 
-    NavigationSuiteScaffold(
-        navigationSuiteItems = {
-            TopLevelDestination.entries.forEach { topLevelDestination ->
-                item(
-                    selected = currentDestination
-                        .isRouteInHierarchy(topLevelDestination.route),
-                    icon = {
-                        Icon(
-                            imageVector = topLevelDestination.selectedIcon,
-                            contentDescription = null,
-                        )
-                    },
-                    label = { Text(text = stringResource(id = topLevelDestination.titleTextId)) },
-                    onClick = { appState.navigateToTopLevelDestination(topLevelDestination) },
-                )
-            }
-        },
-        content = {
-            PedometerNavHost(appState = appState)
+    NavigationSuiteScaffold(navigationSuiteItems = {
+        TopLevelDestination.entries.forEach { topLevelDestination ->
+            item(
+                selected = currentDestination.isRouteInHierarchy(topLevelDestination.route),
+                icon = {
+                    Icon(
+                        imageVector = topLevelDestination.selectedIcon,
+                        contentDescription = null,
+                    )
+                },
+                label = { Text(text = stringResource(id = topLevelDestination.titleTextId)) },
+                onClick = { appState.navigateToTopLevelDestination(topLevelDestination) },
+            )
         }
-    )
+    }, content = {
+        PedometerNavHost(appState = appState)
+    })
 }
 
-private fun NavDestination?.isRouteInHierarchy(route: KClass<*>) =
-    this?.hierarchy?.any {
-        it.hasRoute(route)
-    } ?: false
+private fun NavDestination?.isRouteInHierarchy(route: KClass<*>) = this?.hierarchy?.any {
+    it.hasRoute(route)
+} ?: false

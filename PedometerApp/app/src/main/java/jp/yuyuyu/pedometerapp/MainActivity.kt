@@ -31,12 +31,8 @@ class MainActivity : ComponentActivity() {
                         contentWindowInsets = WindowInsets(0.dp)
                     ) {
                         val navController = rememberNavController()
-                        val appState = AppState(
-                            navController = navController
-                        )
-                        NavigationRootPage(
-                            appState = appState
-                        )
+                        val appState = AppState(navController = navController)
+                        NavigationRootPage(appState = appState)
                     }
                 }
             }

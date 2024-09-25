@@ -17,8 +17,7 @@ class AppState(
     val navController: NavHostController,
 ) {
     val currentDestination: NavDestination?
-        @Composable get() = navController
-            .currentBackStackEntryAsState().value?.destination
+        @Composable get() = navController.currentBackStackEntryAsState().value?.destination
 
     /**
      * UI logic for navigating to a top level destination in the app. Top level destinations have
