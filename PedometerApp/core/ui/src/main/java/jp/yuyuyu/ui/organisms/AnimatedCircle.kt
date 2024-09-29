@@ -38,6 +38,8 @@ fun AnimatedCircle(
     val stroke: Stroke = with(LocalDensity.current) { Stroke(5.dp.toPx()) }
     // currentStateの変化に応じて、アニメーションのトランジションを管理
     val transition = rememberTransition(currentState)
+    // tween: アニメーションの開始値、終了値、時間、イージングなどを指定するための関数
+    // animateFloat: アニメーションの開始値、終了値を指定するための関数
     val angleOffset by transition.animateFloat(
         transitionSpec = {
             tween(
@@ -47,12 +49,15 @@ fun AnimatedCircle(
             )
         }, label = ""
     ) { progress ->
+        // 0fから360fへとアニメーションする値を計算しています。この値は、円弧の描画範囲を決定
         if (progress == AnimatedCircleProgress.START) {
             0f
         } else {
             360f
         }
     }
+    // shift: transition.animateFloatを用いて、currentStateが変化する際に、0fから30fへとアニメーションする値を計算しています。
+    // この値は、円弧の開始角度をずらすことで、より複雑なアニメーションを実現しています。
     val shift by transition.animateFloat(
         transitionSpec = {
             tween(
