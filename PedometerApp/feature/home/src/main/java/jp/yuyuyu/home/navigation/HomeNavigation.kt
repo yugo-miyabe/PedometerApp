@@ -1,25 +1,21 @@
 package jp.yuyuyu.home.navigation
 
-import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import jp.yuyuyu.home.HomeScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
-private data object Home
+data object HomeRoute
 
-@Composable
-fun HomeNavHost(
-    navController: NavHostController
-) {
-    NavHost(
-        navController = navController,
-        startDestination = Home
-    ) {
-        composable<Home> { backStackEntry ->
-            HomeScreen()
-        }
+fun NavController.navigateToHomeScreen(navOptions: NavOptions) {
+    navigate(route = HomeRoute, navOptions)
+}
+
+fun NavGraphBuilder.homeScreen() {
+    composable<HomeRoute>() {
+        HomeScreen()
     }
 }

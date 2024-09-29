@@ -1,5 +1,6 @@
 package jp.yuyuyu.ui
 
+/*
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -10,12 +11,12 @@ import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
 fun PedometerNavigationBottomBar(
-    selectedItem: TopLevelDestination = TopLevelDestination.Home
+    selectedItem: TopLevelDestination = jp.yuyuyu.pedometerapp.TopLevelDestination.HOME
 ) {
     NavigationBar(
         modifier = Modifier.fillMaxWidth(),
     ) {
-        for (item in TopLevelDestination.entries) {
+        for (item in jp.yuyuyu.pedometerapp.TopLevelDestination.entries) {
             val selected = item == selectedItem
             NavigationBarItem(
                 selected = selected,
@@ -36,3 +37,4 @@ fun PedometerNavigationBottomBar(
 fun PedometerNavigationBottomBarPreview() {
     PedometerNavigationBottomBar()
 }
+*/

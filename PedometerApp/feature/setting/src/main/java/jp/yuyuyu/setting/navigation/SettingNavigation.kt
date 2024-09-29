@@ -1,25 +1,21 @@
 package jp.yuyuyu.setting.navigation
 
-import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import jp.yuyuyu.setting.SettingScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
-private data object Setting
+data object SettingRoute
 
-@Composable
-fun SettingNavHost(
-    navController: NavHostController
-) {
-    NavHost(
-        navController = navController,
-        startDestination = Setting
-    ) {
-        composable<Setting> {
-            SettingScreen()
-        }
+fun NavController.navigateToSettingScreen(navOptions: NavOptions) {
+    navigate(route = SettingRoute, navOptions)
+}
+
+fun NavGraphBuilder.settingScreen() {
+    composable<SettingRoute>() {
+        SettingScreen()
     }
 }
