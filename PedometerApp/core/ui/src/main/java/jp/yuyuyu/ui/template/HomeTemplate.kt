@@ -1,10 +1,12 @@
 package jp.yuyuyu.ui.template
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
@@ -17,9 +19,11 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.model.HomeStep
+import jp.yuyuyu.ui.organisms.AnimatedCircle
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
@@ -41,6 +45,27 @@ fun HomeTemplate(
                 .padding(innerPadding),
             contentPadding = insetsPadding
         ) {
+            item {
+                Box(Modifier.padding(16.dp)) {
+                    AnimatedCircle(
+                        proportions = listOf(
+                            22150.13f,
+                            86760.88f,
+                            9870.48f,
+                            253f,
+                        ),
+                        colors = listOf(
+                            Color(0xFF004940),
+                            Color(0xFF005D57),
+                            Color(0xFF04B97F),
+                            Color(0xFF37EFBA)
+                        ),
+                        modifier = Modifier
+                            .height(300.dp)
+                            .fillMaxWidth()
+                    )
+                }
+            }
             items(list) {
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(text = "startTime: " + it.startTime.toString())
