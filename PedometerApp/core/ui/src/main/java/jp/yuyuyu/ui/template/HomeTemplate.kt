@@ -39,6 +39,19 @@ fun HomeTemplate(
                 WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom
             ).asPaddingValues()
 
+        val accountsProportion: List<Float> = listOf(
+            0.025059527f,
+            0.66295046f,
+            0.04824622f,
+            0.042760305f,
+        )
+        val circleColors: List<Color> = listOf(
+            Color(0xFF004940),
+            Color(0xFF005D57),
+            Color(0xFF04B97F),
+            Color(0xFF37EFBA)
+        )
+
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -48,18 +61,8 @@ fun HomeTemplate(
             item {
                 Box(Modifier.padding(16.dp)) {
                     AnimatedCircle(
-                        proportions = listOf(
-                            22150.13f,
-                            86760.88f,
-                            9870.48f,
-                            253f,
-                        ),
-                        colors = listOf(
-                            Color(0xFF004940),
-                            Color(0xFF005D57),
-                            Color(0xFF04B97F),
-                            Color(0xFF37EFBA)
-                        ),
+                        proportions = accountsProportion,
+                        colors = circleColors,
                         modifier = Modifier
                             .height(300.dp)
                             .fillMaxWidth()

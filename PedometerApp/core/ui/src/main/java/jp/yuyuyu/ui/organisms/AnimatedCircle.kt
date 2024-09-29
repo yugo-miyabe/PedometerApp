@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 
+// TODO 修正する
 @Composable
 @Suppress("MagicNumber")
 fun AnimatedCircle(
@@ -82,6 +83,7 @@ fun AnimatedCircle(
             halfSize.height - innerRadius
         )
         val size = Size(innerRadius * 2, innerRadius * 2)
+        // 円の開始角度
         var startAngle = shift - 90f
         proportions.forEachIndexed { index, proportion ->
             val sweep = proportion * angleOffset
@@ -100,7 +102,6 @@ fun AnimatedCircle(
 }
 
 private enum class AnimatedCircleProgress { START, END }
-//private const val DividerLengthInDegrees = 1.8f
 
 @Composable
 @PreviewDynamicTheme
@@ -108,10 +109,10 @@ private enum class AnimatedCircleProgress { START, END }
 private fun AnimatedCirclePreview() {
     AnimatedCircle(
         proportions = listOf(
-            2215.13f,
-            8676.88f,
-            987.48f,
-            253f,
+            0.025059527f,
+            0.66295046f,
+            0.04824622f,
+            0.042760305f,
         ),
         colors = listOf(
             Color(0xFF004940),
