@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">万歩計</string>
+    <string name="access_permissions_manage">データとアクセス権限の管理</string>
 </resources>

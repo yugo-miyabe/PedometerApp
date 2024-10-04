@@ -3,4 +3,5 @@
     <string name="home_tab">Home</string>
     <string name="time_line_tab">TimeLine</string>
     <string name="setting_tab">Setting</string>
+    <string name="access_permissions_manage">データとアクセス権限の管理</string>
 </resources>

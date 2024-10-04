@@ -13,7 +13,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import jp.yuyuyu.common.R
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
+import jp.yuyuyu.ui.molecules.ListItem
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
@@ -30,7 +33,12 @@ fun SettingTemplate() {
             contentPadding = insetsPadding
         ) {
             item {
-                Text(text = "Setting_1")
+                ListItem(
+                    text = stringResource(R.string.access_permissions_manage),
+                    onClicked = {
+                        // TODO
+                    }
+                )
             }
             item {
                 Text(text = "Setting_2")
