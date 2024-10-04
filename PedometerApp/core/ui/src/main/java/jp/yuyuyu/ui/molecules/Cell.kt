@@ -1,6 +1,7 @@
 package jp.yuyuyu.ui.molecules
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.Surface
@@ -14,7 +15,9 @@ import jp.yuyuyu.ui.util.PreviewDynamicTheme
 @Composable
 fun ListItem(text: String, onClicked: () -> Unit) {
     Card(onClick = onClicked) {
-        Box(modifier = Modifier.padding(horizontal = 16.dp, vertical = 16.dp)) {
+        Box(modifier = Modifier
+            .padding(horizontal = 16.dp, vertical = 16.dp)
+            .fillMaxWidth()) {
             Text(text)
         }
     }
