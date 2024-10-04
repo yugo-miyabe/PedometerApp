@@ -1,5 +1,6 @@
 package jp.yuyuyu.ui.template
 
+import android.content.Intent
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
@@ -13,6 +14,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.common.R
@@ -22,6 +24,9 @@ import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
 fun SettingTemplate() {
+    val health = "androidx.health.ACTION_HEALTH_CONNECT_SETTINGS"
+    val context = LocalContext.current
+
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         val insetsPadding =
             WindowInsets.systemBars.only(
@@ -38,7 +43,9 @@ fun SettingTemplate() {
                 ListItem(
                     text = stringResource(R.string.access_permissions_manage),
                     onClicked = {
-                        // TODO
+                        val settingsIntent = Intent()
+                        settingsIntent.action = health
+                        context.startActivity(settingsIntent)
                     }
                 )
             }
