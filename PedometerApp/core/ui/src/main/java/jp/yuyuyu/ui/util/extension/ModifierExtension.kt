@@ -5,7 +5,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 
-
 fun Modifier.cardDecoration(
     isTop: Boolean,
     isBottom: Boolean,
