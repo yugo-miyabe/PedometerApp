@@ -4,4 +4,6 @@
     <string name="time_line_tab">TimeLine</string>
     <string name="setting_tab">Setting</string>
     <string name="access_permissions_manage">データとアクセス権限の管理</string>
+    <string name="terms_of_service">利用規約</string>
+    <string name="license">ライセンス</string>
 </resources>
