@@ -13,11 +13,17 @@ import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
-fun ListItem(text: String, onClicked: () -> Unit) {
-    Card(onClick = onClicked) {
-        Box(modifier = Modifier
-            .padding(horizontal = 16.dp, vertical = 16.dp)
-            .fillMaxWidth()) {
+fun ListItem(
+    text: String,
+    modifier: Modifier = Modifier,
+    onClicked: () -> Unit
+) {
+    Card(onClick = onClicked, modifier = modifier) {
+        Box(
+            modifier = Modifier
+                .padding(horizontal = 16.dp, vertical = 16.dp)
+                .fillMaxWidth()
+        ) {
             Text(text)
         }
     }

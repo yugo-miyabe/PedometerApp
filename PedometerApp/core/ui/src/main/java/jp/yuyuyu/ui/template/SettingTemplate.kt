@@ -21,6 +21,7 @@ import jp.yuyuyu.common.R
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.molecules.ListItem
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
+import jp.yuyuyu.ui.util.extension.cardDecoration
 
 @Composable
 fun SettingTemplate() {
@@ -41,6 +42,7 @@ fun SettingTemplate() {
         ) {
             item {
                 ListItem(
+                    modifier = Modifier.cardDecoration(isTop = true, isBottom = false),
                     text = stringResource(R.string.access_permissions_manage),
                     onClicked = {
                         val settingsIntent = Intent()
