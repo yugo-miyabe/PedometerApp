@@ -1,17 +1,18 @@
 package jp.yuyuyu.ui.template
 
 import android.content.Intent
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -21,7 +22,6 @@ import jp.yuyuyu.common.R
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.molecules.ListItem
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
-import jp.yuyuyu.ui.util.extension.cardDecoration
 
 @Composable
 fun SettingTemplate() {
@@ -42,7 +42,6 @@ fun SettingTemplate() {
         ) {
             item {
                 ListItem(
-                    modifier = Modifier.cardDecoration(isTop = true, isBottom = false),
                     text = stringResource(R.string.access_permissions_manage),
                     onClicked = {
                         val settingsIntent = Intent()
@@ -52,16 +51,26 @@ fun SettingTemplate() {
                 )
             }
             item {
-                Text(text = "Setting_2")
+                Spacer(modifier = Modifier.height(16.dp))
             }
             item {
-                Text(text = "Setting_3")
+                ListItem(
+                    text = stringResource(R.string.terms_of_service),
+                    isTop = true,
+                    isBottom = false,
+                    onClicked = { /* TODO */ }
+                )
             }
             item {
-                Text(text = "Setting_4")
+                Spacer(modifier = Modifier.height(2.dp))
             }
             item {
-                Text(text = "Setting_5")
+                ListItem(
+                    text = stringResource(R.string.license),
+                    isTop = false,
+                    isBottom = true,
+                    onClicked = { /* TODO */ }
+                )
             }
         }
     }
