@@ -13,10 +13,4 @@ class TutorialViewModel @Inject constructor() : ContainerHost<TutorialState, Tut
 
 }
 
-data class TutorialState(
-    val test: String = ""
-)
 
-sealed class TutorialSideEffect {
-    data object RequestPermission : TutorialSideEffect()
-}

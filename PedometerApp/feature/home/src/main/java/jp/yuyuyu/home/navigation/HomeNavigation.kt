@@ -4,7 +4,6 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import jp.yuyuyu.home.HomeScreen
 import jp.yuyuyu.home.tutorial.TutorialScreen
 import kotlinx.serialization.Serializable
@@ -23,13 +22,14 @@ fun NavController.navigateToTutorialScreen() {
     navigate(route = TutorialRoute)
 }
 
-fun NavGraphBuilder.homeScreen() {
-    composable<HomeRoute>() {
-        val navController = rememberNavController()
+fun NavGraphBuilder.homeNavGraph(
+    navController: NavController
+) {
+    composable<HomeRoute> {
         HomeScreen(onNavigateToTutorial = navController::navigateToTutorialScreen)
     }
 
-    composable<TutorialRoute>() {
+    composable<TutorialRoute> {
         TutorialScreen()
     }
 }

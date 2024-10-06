@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import jp.yuyuyu.home.navigation.HomeRoute
-import jp.yuyuyu.home.navigation.homeScreen
+import jp.yuyuyu.home.navigation.homeNavGraph
 import jp.yuyuyu.pedometerapp.AppState
 import jp.yuyuyu.setting.navigation.settingScreen
 import jp.yuyuyu.timeline.navigation.timeLineScreen
@@ -21,7 +21,7 @@ fun PedometerNavHost(
         startDestination = HomeRoute,
         modifier = modifier
     ) {
-        homeScreen()
+        homeNavGraph(navController)
         timeLineScreen()
         settingScreen()
     }
