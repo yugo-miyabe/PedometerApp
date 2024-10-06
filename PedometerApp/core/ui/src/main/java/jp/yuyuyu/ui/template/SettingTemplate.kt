@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import jp.yuyuyu.common.R
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.molecules.ListItem
+import jp.yuyuyu.ui.molecules.ListItemSwitch
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
@@ -41,8 +42,22 @@ fun SettingTemplate() {
             contentPadding = insetsPadding
         ) {
             item {
+                ListItemSwitch(
+                    text = stringResource(R.string.health_connect_settings),
+                    isChecked = true,
+                    isTop = true,
+                    isBottom = false,
+                    onClicked = { /* TODO */ },
+                )
+            }
+            item {
+                Spacer(modifier = Modifier.height(2.dp))
+            }
+            item {
                 ListItem(
                     text = stringResource(R.string.access_permissions_manage),
+                    isTop = false,
+                    isBottom = true,
                     onClicked = {
                         val settingsIntent = Intent()
                         settingsIntent.action = health
