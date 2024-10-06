@@ -15,6 +15,7 @@ fun PedometerNavHost(
     modifier: Modifier = Modifier,
 ) {
     val navController = appState.navController
+
     NavHost(
         navController = navController,
         startDestination = HomeRoute,

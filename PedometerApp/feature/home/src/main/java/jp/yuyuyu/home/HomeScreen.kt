@@ -6,7 +6,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
-import androidx.health.connect.client.HealthConnectClient
 import androidx.health.connect.client.PermissionController
 import androidx.health.connect.client.permission.HealthPermission
 import androidx.health.connect.client.records.StepsRecord
@@ -18,8 +17,10 @@ import timber.log.Timber
 
 @Composable
 fun HomeScreen(
+    onNavigateToTutorial: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
+    @Suppress("UnusedPrivateProperty")
     val context = LocalContext.current
     val state by viewModel.container.stateFlow.collectAsStateWithLifecycle()
 
@@ -67,10 +68,14 @@ fun HomeScreen(
     HomeTemplate(
         list = state.list,
         onClick = {
+            /*
             // Health Connect Client のインスタンスを取得
             val healthConnectClient = HealthConnectClient.getOrCreate(context)
             // 歩数データを読み取り
             viewModel.requestRecode(healthConnectClient)
+            */
+
+            onNavigateToTutorial()
         }
     )
 }

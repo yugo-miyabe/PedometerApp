@@ -10,4 +10,3 @@ fun TutorialScreen(
 ) {
     TutorialTemplate()
 }
-
