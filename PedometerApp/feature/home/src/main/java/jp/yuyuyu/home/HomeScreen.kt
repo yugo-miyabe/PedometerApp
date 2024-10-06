@@ -31,6 +31,8 @@ fun HomeScreen(
 
     val requestPermissionActivityContract =
         PermissionController.createRequestPermissionResultContract()
+
+    @Suppress("UnusedPrivateProperty")
     val requestHealthPermissions =
         rememberLauncherForActivityResult(requestPermissionActivityContract) { granted ->
             if (granted.containsAll(healthPermission)) {
@@ -44,13 +46,19 @@ fun HomeScreen(
 
     val permissionLaunch =
         rememberLauncherForActivityResult(contract = ActivityResultContracts.RequestPermission()) { isGranted ->
-            // TODO
+            if (isGranted) {
+                // 全ての権限が許可されたケース
+                Timber.d("all permission granted")
+            } else {
+                // 許可されていない権限があるケース
+                Timber.d("all not granted")
+            }
         }
 
     viewModel.collectSideEffect {
         when (it) {
             HomeSideEffect.RequestPermission -> {
-                requestHealthPermissions.launch(healthPermission)
+                //requestHealthPermissions.launch(healthPermission)
                 permissionLaunch.launch(ACTIVITY_RECOGNITION)
             }
         }

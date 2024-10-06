@@ -96,15 +96,15 @@ fun HomeTemplate(
     }
 }
 
-@PreviewDynamicTheme
-@Composable
-private fun HomePreview() {
-    PedometerAppTheme {
-        Surface {
-            HomeTemplate(
-                list = emptyList(),
-                onClick = {/* preview */ }
-            )
+    @PreviewDynamicTheme
+    @Composable
+    private fun HomePreview() {
+        PedometerAppTheme {
+            Surface {
+                HomeTemplate(
+                    list = emptyList(),
+                    onClick = {/* preview */ }
+                )
+            }
         }
     }
-}
