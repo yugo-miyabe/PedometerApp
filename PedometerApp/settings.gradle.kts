@@ -34,3 +34,4 @@ include(":feature:home")
 include(":feature:setting")
 include(":feature:timeline")
 
+include(":feature:tutorial")
