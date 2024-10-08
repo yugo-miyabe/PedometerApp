@@ -8,14 +8,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation.compose.rememberNavController
 import jp.yuyuyu.pedometerapp.AppState
 import jp.yuyuyu.pedometerapp.TopLevelDestination
 import kotlin.reflect.KClass
 
 @Composable
-fun NavigationRootPage(
-    appState: AppState,
-) {
+fun NavigationRootPage() {
+    val navController = rememberNavController()
+    val appState = AppState(navController = navController)
     val currentDestination = appState.currentDestination
 
     NavigationSuiteScaffold(navigationSuiteItems = {

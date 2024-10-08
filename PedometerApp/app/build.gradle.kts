@@ -98,6 +98,8 @@ dependencies {
     implementation(projects.core.ui)
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
+
+    implementation(projects.feature.tutorial)
     implementation(projects.feature.home)
     implementation(projects.feature.setting)
     implementation(projects.feature.timeline)

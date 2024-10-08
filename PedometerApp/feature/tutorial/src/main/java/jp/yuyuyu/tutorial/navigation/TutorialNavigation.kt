@@ -13,9 +13,7 @@ fun NavController.navigateToTutorialScreen() {
     navigate(route = TutorialRoute)
 }
 
-fun NavGraphBuilder.tutorialNavGraph(
-    navController: NavController
-) {
+fun NavGraphBuilder.tutorialNavGraph() {
     composable<TutorialRoute> {
         TutorialScreen()
     }
