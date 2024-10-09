@@ -34,7 +34,7 @@ fun NavigationRootPage() {
             )
         }
     }, content = {
-        PedometerNavHost(appState = appState)
+        PedometerNavHost()
     })
 }
 
