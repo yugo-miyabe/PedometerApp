@@ -9,7 +9,8 @@ import org.orbitmvi.orbit.compose.collectSideEffect
 import timber.log.Timber
 
 @Composable
-fun TutorialScreen(
+fun TutorialPage(
+    onNext: () -> Unit,
     viewModel: TutorialViewModel = hiltViewModel()
 ) {
 
@@ -30,5 +31,5 @@ fun TutorialScreen(
         }
     }
 
-    TutorialTemplate()
+    TutorialTemplate(onNext)
 }

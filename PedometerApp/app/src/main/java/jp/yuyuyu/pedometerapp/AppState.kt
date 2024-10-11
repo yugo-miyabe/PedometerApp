@@ -11,6 +11,7 @@ import androidx.navigation.navOptions
 import jp.yuyuyu.home.navigation.navigateToHomeScreen
 import jp.yuyuyu.setting.navigation.navigateToSettingScreen
 import jp.yuyuyu.timeline.navigation.navigateToTimeLineScreen
+import jp.yuyuyu.ui.util.TopLevelDestination
 
 @Stable
 class AppState(

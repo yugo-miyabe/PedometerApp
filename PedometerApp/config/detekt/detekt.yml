@@ -738,7 +738,7 @@ style:
   UnusedPrivateClass:
     active: true
   UnusedPrivateMember:
-    active: true
+    active: false
     allowedNames: ''
     ignoreAnnotated: [ 'Preview','PreviewDynamicTheme' ]
   UnusedPrivateProperty:

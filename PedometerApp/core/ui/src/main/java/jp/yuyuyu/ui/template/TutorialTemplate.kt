@@ -20,7 +20,9 @@ import jp.yuyuyu.ui.atoms.BottomButton
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
-fun TutorialTemplate() {
+fun TutorialTemplate(
+    onNext: () -> Unit,
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = {
@@ -28,7 +30,7 @@ fun TutorialTemplate() {
                 content = {
                     Button(
                         modifier = Modifier.fillMaxWidth(),
-                        onClick = { /* preview */ },
+                        onClick = onNext,
                         content = { Text("次へ") }
                     )
                 }
