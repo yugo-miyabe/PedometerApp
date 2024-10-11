@@ -63,7 +63,7 @@ fun TutorialTemplate(
 private fun TutorialPreview() {
     PedometerAppTheme {
         Surface {
-            TutorialTemplate()
+            TutorialTemplate(onNext = { /* preview */ })
         }
     }
 }

@@ -19,7 +19,7 @@ fun PedometerNavHost() {
         tutorialNavGraph(
             navController = navController,
             onNext = {
-                // TODO
+                navController.navigate(AppRoute)
             }
         )
 
