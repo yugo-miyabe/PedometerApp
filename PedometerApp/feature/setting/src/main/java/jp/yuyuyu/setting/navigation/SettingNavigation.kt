@@ -14,8 +14,8 @@ fun NavController.navigateToSettingScreen(navOptions: NavOptions) {
     navigate(route = SettingRoute, navOptions)
 }
 
-fun NavGraphBuilder.settingScreen() {
-    composable<SettingRoute>() {
+fun NavGraphBuilder.settingGraph() {
+    composable<SettingRoute> {
         SettingScreen()
     }
 }
