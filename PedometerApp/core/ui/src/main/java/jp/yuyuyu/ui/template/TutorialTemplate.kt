@@ -63,7 +63,7 @@ fun TutorialTemplate(
             item {
                 Box(
                     contentAlignment = Alignment.Center,
-                    modifier = Modifier.padding(vertical = 80.dp),
+                    modifier = Modifier.padding(vertical = 100.dp),
                 ) {
                     Icon(
                         painter = rememberVectorPainter(image = Icons.Filled.DirectionsWalk),
