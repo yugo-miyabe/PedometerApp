@@ -77,11 +77,3 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
     }
 
 }
-
-data class HomeState(
-    val list: List<HomeStep> = emptyList()
-)
-
-sealed class HomeSideEffect {
-    data object RequestPermission : HomeSideEffect()
-}
