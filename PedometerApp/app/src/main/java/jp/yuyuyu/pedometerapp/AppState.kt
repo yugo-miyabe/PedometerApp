@@ -26,7 +26,7 @@ class AppState(
      *
      * @param topLevelDestination: The destination the app needs to navigate to.
      */
-    fun navigateToTopLevelDestination(topLevelDestination: TopLevelDestination) {
+    fun navigateToTopLevelDestination(topLevelDestination: PedometerBottomNavigation) {
         trace(sectionName = "Navigation: ${topLevelDestination.name}") {
             val topLevelNavOptions = navOptions {
                 // Pop up to the start destination of the graph to
@@ -43,13 +43,13 @@ class AppState(
             }
 
             when (topLevelDestination) {
-                TopLevelDestination.HOME ->
+                PedometerBottomNavigation.HOME ->
                     navController.navigateToHomeScreen(topLevelNavOptions)
 
-                TopLevelDestination.TIMELINE ->
+                PedometerBottomNavigation.TIMELINE ->
                     navController.navigateToTimeLineScreen(topLevelNavOptions)
 
-                TopLevelDestination.SETTING ->
+                PedometerBottomNavigation.SETTING ->
                     navController.navigateToSettingScreen(topLevelNavOptions)
             }
         }

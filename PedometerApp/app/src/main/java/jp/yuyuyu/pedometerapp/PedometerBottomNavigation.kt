@@ -9,7 +9,7 @@ import jp.yuyuyu.common.R
 import kotlinx.serialization.Serializable
 
 @Serializable
-enum class TopLevelDestination(
+enum class PedometerBottomNavigation(
     val selectedIcon: ImageVector,
     val unselectedIcon: ImageVector,
     val titleTextId: Int,

@@ -17,7 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import jp.yuyuyu.home.navigation.homeNavGraph
-import jp.yuyuyu.pedometerapp.TopLevelDestination
+import jp.yuyuyu.pedometerapp.PedometerBottomNavigation
 import jp.yuyuyu.setting.navigation.settingNavGraph
 import jp.yuyuyu.timeline.navigation.timeLineNavGraph
 import kotlinx.serialization.Serializable
@@ -40,7 +40,7 @@ fun NavigationBottomRootPage() {
             NavigationBar {
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentRoute = navBackStackEntry?.destination?.route
-                TopLevelDestination.entries.forEach { item ->
+                PedometerBottomNavigation.entries.forEach { item ->
                     NavigationBarItem(
                         icon = {
                             Icon(
@@ -72,7 +72,7 @@ fun NavigationBottomRootPage() {
 fun BottomNavigationRoot(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = TopLevelDestination.HOME.route
+        startDestination = PedometerBottomNavigation.HOME.route
     ) {
         homeNavGraph()
         timeLineNavGraph()
