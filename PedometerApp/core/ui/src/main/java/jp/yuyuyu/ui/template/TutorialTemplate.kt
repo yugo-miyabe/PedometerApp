@@ -22,7 +22,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import jp.yuyuyu.common.R
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.atoms.BottomButton
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
@@ -39,7 +41,7 @@ fun TutorialTemplate(
                     Button(
                         modifier = Modifier.fillMaxWidth(),
                         onClick = onNext,
-                        content = { Text("次へ") }
+                        content = { Text(text = stringResource(R.string.tutorial_next)) }
                     )
                 }
             )
@@ -61,7 +63,7 @@ fun TutorialTemplate(
             item {
                 Box(
                     contentAlignment = Alignment.Center,
-                    modifier = Modifier.padding(vertical = 24.dp),
+                    modifier = Modifier.padding(vertical = 80.dp),
                 ) {
                     Icon(
                         painter = rememberVectorPainter(image = Icons.Filled.DirectionsWalk),
@@ -72,9 +74,6 @@ fun TutorialTemplate(
             }
             item {
                 Text(text = "このアプリの使用するにはアクティビティの許可が必要です")
-            }
-            item {
-                Text(text = "Tutorial_2")
             }
         }
     }

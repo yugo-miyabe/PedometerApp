@@ -3,6 +3,7 @@
     <string name="home_tab">Home</string>
     <string name="time_line_tab">TimeLine</string>
     <string name="setting_tab">Setting</string>
+    <string name="tutorial_next">次へ</string>
     <string name="access_permissions_manage">データとアクセス権限の管理</string>
     <string name="health_connect_settings">ヘルスコネクトと同期する</string>
     <string name="terms_of_service">利用規約</string>
