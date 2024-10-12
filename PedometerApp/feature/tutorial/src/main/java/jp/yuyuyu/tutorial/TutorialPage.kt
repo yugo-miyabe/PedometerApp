@@ -6,7 +6,6 @@ import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import jp.yuyuyu.ui.template.TutorialTemplate
 import org.orbitmvi.orbit.compose.collectSideEffect
-import timber.log.Timber
 
 @Composable
 fun TutorialPage(
@@ -17,9 +16,9 @@ fun TutorialPage(
     val permissionLaunch =
         rememberLauncherForActivityResult(contract = ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
-                Timber.d("all permission granted")
+                onNext()
             } else {
-                Timber.d("all not granted")
+                onNext()
             }
         }
 
@@ -31,5 +30,5 @@ fun TutorialPage(
         }
     }
 
-    TutorialTemplate(onNext)
+    TutorialTemplate(onNext = viewModel::onNext)
 }
