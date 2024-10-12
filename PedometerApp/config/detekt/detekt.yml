@@ -733,12 +733,12 @@ style:
   UnusedImports:
     active: false
   UnusedParameter:
-    active: true
+    active: false
     allowedNames: 'ignored|expected|modifier|viewModel'
   UnusedPrivateClass:
     active: true
   UnusedPrivateMember:
-    active: true
+    active: false
     allowedNames: ''
     ignoreAnnotated: [ 'Preview','PreviewDynamicTheme' ]
   UnusedPrivateProperty:
