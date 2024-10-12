@@ -15,27 +15,6 @@ fun NavigationRootPage() {
     val currentDestination = appState.currentDestination
 
     PedometerNavHost()
-
-    /*
-    NavigationSuiteScaffold(
-        navigationSuiteItems = {
-            TopLevelDestination.entries.forEach { topLevelDestination ->
-                item(
-                    selected = currentDestination.isRouteInHierarchy(topLevelDestination.),
-                    icon = {
-                        Icon(
-                            imageVector = topLevelDestination.selectedIcon,
-                            contentDescription = null,
-                        )
-                    },
-                    label = { Text(text = stringResource(id = topLevelDestination.titleTextId)) },
-                    onClick = { appState.navigateToTopLevelDestination(topLevelDestination) },
-                )
-            }
-        }, content = {
-        })
-
-     */
 }
 
 private fun NavDestination?.isRouteInHierarchy(route: KClass<*>) = this?.hierarchy?.any {

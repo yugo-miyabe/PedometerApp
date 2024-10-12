@@ -23,7 +23,7 @@ import jp.yuyuyu.ui.util.PreviewDynamicTheme
 @Composable
 fun BottomButton(
     modifier: Modifier = Modifier,
-    contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+    contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
     content: @Composable ColumnScope.() -> Unit
 ) {
     Surface(

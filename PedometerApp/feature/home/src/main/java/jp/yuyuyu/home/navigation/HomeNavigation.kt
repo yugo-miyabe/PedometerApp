@@ -18,13 +18,12 @@ fun NavController.navigateToHomeScreen(navOptions: NavOptions) {
 }
 
 fun NavGraphBuilder.homeNavGraph() {
-    composable<HomeRoute> {
+    composable("home_route") {
         HomeScreen(onNavigateToTutorial = {
             // TODO tutorialへ遷移する
         })
     }
 }
-
 
 @Composable
 fun HomeNavHost(navController: NavHostController) {

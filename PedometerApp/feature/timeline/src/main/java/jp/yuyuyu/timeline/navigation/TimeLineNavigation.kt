@@ -17,8 +17,8 @@ fun NavController.navigateToTimeLineScreen(navOptions: NavOptions) {
     navigate(route = TimeLineRoute, navOptions)
 }
 
-fun NavGraphBuilder.timeLineGraph() {
-    composable<TimeLineRoute> {
+fun NavGraphBuilder.timeLineNavGraph() {
+    composable("time_line_route") {
         TimeLineScreen()
     }
 }

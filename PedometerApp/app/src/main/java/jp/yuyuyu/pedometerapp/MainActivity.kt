@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import dagger.hilt.android.AndroidEntryPoint
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
-import jp.yuyuyu.pedometerapp.navigation.NavigationRootPage
+import jp.yuyuyu.pedometerapp.navigation.PedometerNavHost
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         contentWindowInsets = WindowInsets(0.dp)
                     ) {
-                        NavigationRootPage()
+                        PedometerNavHost()
                     }
                 }
             }
