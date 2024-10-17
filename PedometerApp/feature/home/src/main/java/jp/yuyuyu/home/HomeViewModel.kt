@@ -27,7 +27,7 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
 
     init {
         intent {
-            postSideEffect(HomeSideEffect.RequestPermission)
+            postSideEffect(HomeSideEffect.RequestStepData)
         }
     }
 
