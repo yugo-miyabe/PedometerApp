@@ -1,8 +1,6 @@
 package jp.yuyuyu.home
 
-import android.Manifest.permission.ACTIVITY_RECOGNITION
 import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
@@ -20,7 +18,6 @@ fun HomeScreen(
     onNavigateToTutorial: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
-    @Suppress("UnusedPrivateProperty")
     val context = LocalContext.current
     val state by viewModel.container.stateFlow.collectAsStateWithLifecycle()
 
@@ -45,28 +42,16 @@ fun HomeScreen(
             }
         }
 
-    val permissionLaunch =
-        rememberLauncherForActivityResult(contract = ActivityResultContracts.RequestPermission()) { isGranted ->
-            if (isGranted) {
-                // 全ての権限が許可されたケース
-                Timber.d("all permission granted")
-            } else {
-                // 許可されていない権限があるケース
-                Timber.d("all not granted")
-            }
-        }
-
     viewModel.collectSideEffect {
         when (it) {
-            HomeSideEffect.RequestPermission -> {
-                //requestHealthPermissions.launch(healthPermission)
-                permissionLaunch.launch(ACTIVITY_RECOGNITION)
+            HomeSideEffect.RequestStepData -> {
+
             }
         }
     }
 
     HomeTemplate(
-        list = state.list,
+        todayStep = state.todayStep,
         onClick = {
             /*
             // Health Connect Client のインスタンスを取得
@@ -74,7 +59,6 @@ fun HomeScreen(
             // 歩数データを読み取り
             viewModel.requestRecode(healthConnectClient)
             */
-
             onNavigateToTutorial()
         }
     )

@@ -1,7 +1,6 @@
 package jp.yuyuyu.ui.template
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -22,13 +20,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
-import jp.yuyuyu.ui.model.HomeStep
 import jp.yuyuyu.ui.organisms.AnimatedCircle
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
 fun HomeTemplate(
-    list: List<HomeStep>,
+    todayStep: Int,
     onClick: () -> Unit
 ) {
     Scaffold(
@@ -69,14 +66,8 @@ fun HomeTemplate(
                     )
                 }
             }
-            items(list) {
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(text = "startTime: " + it.startTime.toString())
-                Text(text = "endTime: " + it.endTime.toString())
-                Text(text = "steps: " + it.steps.toString())
-            }
             item {
-                Text(text = "Home_1")
+                Text(text = "歩いた歩数: $todayStep")
             }
             item {
                 Text(text = "Home_2")
@@ -96,15 +87,15 @@ fun HomeTemplate(
     }
 }
 
-    @PreviewDynamicTheme
-    @Composable
-    private fun HomePreview() {
-        PedometerAppTheme {
-            Surface {
-                HomeTemplate(
-                    list = emptyList(),
-                    onClick = {/* preview */ }
-                )
-            }
+@PreviewDynamicTheme
+@Composable
+private fun HomePreview() {
+    PedometerAppTheme {
+        Surface {
+            HomeTemplate(
+                todayStep = 100,
+                onClick = {/* preview */ }
+            )
         }
     }
+}
