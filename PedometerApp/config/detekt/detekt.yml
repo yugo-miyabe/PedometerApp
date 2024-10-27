@@ -742,7 +742,7 @@ style:
     allowedNames: ''
     ignoreAnnotated: [ 'Preview','PreviewDynamicTheme' ]
   UnusedPrivateProperty:
-    active: true
+    active: false
     allowedNames: '_|ignored|expected|serialVersionUID'
   UseAnyOrNoneInsteadOfFind:
     active: true

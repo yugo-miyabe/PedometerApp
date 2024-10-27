@@ -33,6 +33,8 @@ orbitViewmodel = "4.4.0"
 targetSdk = "34"
 timber = "5.0.1"
 uiToolingPreviewAndroid = "1.6.8"
+playServicesAuth = "21.2.0"
+playServicesFitness = "21.2.0"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
@@ -70,6 +72,8 @@ orbit-core = { module = "org.orbit-mvi:orbit-core", version.ref = "orbitCore" }
 orbit-test = { module = "org.orbit-mvi:orbit-test", version.ref = "orbitTest" }
 orbit-viewmodel = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbitViewmodel" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+play-services-fitness = { group = "com.google.android.gms", name = "play-services-fitness", version.ref = "playServicesFitness" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
