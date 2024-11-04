@@ -5,5 +5,5 @@ repos:
         name: detekt check  
         description: Runs `detekt` on modified .kt files.  
         language: script  
-        entry: ./PedometerApp/scripts/detekt.sh  
+        entry: ./scripts/detekt.sh  
         files: \.kt
