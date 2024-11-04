@@ -7,7 +7,6 @@ import androidx.health.connect.client.time.TimeRangeFilter
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import jp.yuyuyu.ui.model.HomeStep
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
@@ -27,7 +26,7 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
 
     init {
         intent {
-            postSideEffect(HomeSideEffect.RequestPermission)
+            postSideEffect(HomeSideEffect.RequestStepData)
         }
     }
 
@@ -54,15 +53,13 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
                     val endTime = stepsRecord.endTime
                     // 歩数データを使って何か処理を行う
                     intent {
+                        /*
                         reduce {
                             state.copy(
-                                list = state.list + HomeStep(
-                                    steps = steps,
-                                    startTime = startTime,
-                                    endTime = endTime
-                                )
+                                state.todayStep
                             )
                         }
+                        */
                     }
                 }
             } catch (e: Exception) {
@@ -76,12 +73,9 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
         const val ZONE_ID = "Asia/Tokyo"
     }
 
-}
-
-data class HomeState(
-    val list: List<HomeStep> = emptyList()
-)
-
-sealed class HomeSideEffect {
-    data object RequestPermission : HomeSideEffect()
+    fun updateStepCount(stepCount: Int) = intent {
+        reduce {
+            state.copy(stepCount = state.stepCount + stepCount)
+        }
+    }
 }

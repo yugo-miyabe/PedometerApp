@@ -29,8 +29,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PedometerApp"
-        tools:targetApi="34"
-        tools:ignore="ObsoleteSdkInt">
+        tools:ignore="ObsoleteSdkInt"
+        tools:targetApi="34">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -56,6 +57,12 @@
                 <category android:name="android.intent.category.HEALTH_PERMISSIONS" />
             </intent-filter>
         </activity-alias>
+        <!--
+        <service
+            android:name="jp.yuyuyu.system.StepCounterService"
+            android:exported="false"
+            android:foregroundServiceType="health" />
+         -->
     </application>
 
     <queries>
