@@ -48,9 +48,6 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
                 val response = healthConnectClient.readRecords(request = request)
                 // 歩数データの処理
                 response.records.forEach { stepsRecord ->
-                    val steps = stepsRecord.count
-                    val startTime = stepsRecord.startTime
-                    val endTime = stepsRecord.endTime
                     // 歩数データを使って何か処理を行う
                     intent {
                         /*
