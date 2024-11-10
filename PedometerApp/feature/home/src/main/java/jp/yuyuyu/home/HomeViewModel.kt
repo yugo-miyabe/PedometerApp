@@ -75,7 +75,7 @@ class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEff
 
     fun updateStepCount(stepCount: Int) = intent {
         reduce {
-            state.copy(stepCount = state.stepCount + stepCount)
+            state.copy(stepCount = stepCount)
         }
     }
 }
