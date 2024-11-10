@@ -1,8 +1,6 @@
 package jp.yuyuyu.pedometerapp
 
 import android.annotation.SuppressLint
-import android.hardware.Sensor
-import android.hardware.SensorManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,8 +17,6 @@ import jp.yuyuyu.pedometerapp.navigation.PedometerNavHost
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private lateinit var sensorManager: SensorManager
-    private var stepSensor: Sensor? = null
 
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {

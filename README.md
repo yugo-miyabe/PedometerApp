@@ -31,5 +31,7 @@
 
 https://tech.mirrativ.stream/entry/2023/02/14/103911
 
+https://httpie.io/
+
 
 
