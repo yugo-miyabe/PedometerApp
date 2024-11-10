@@ -17,7 +17,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import jp.yuyuyu.ui.template.HomeTemplate
 import org.orbitmvi.orbit.compose.collectSideEffect
 import timber.log.Timber
-
+import kotlin.math.max
 
 @Composable
 fun HomeScreen(
@@ -52,15 +52,22 @@ fun HomeScreen(
         when (it) {
             HomeSideEffect.RequestStepData -> {
                 // センサー管理の設定
-                var sensorManager: SensorManager =
+                val sensorManager: SensorManager =
                     context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+                var previousTotalSteps = 0f
 
                 val listener = object : SensorEventListener {
                     // センサー値が変更されたとき
                     override fun onSensorChanged(event: SensorEvent?) {
                         if (event == null) return
                         val currentSteps = event.values[0]
-                        viewModel.updateStepCount(currentSteps.toInt())
+                        if (previousTotalSteps == 0f) {
+                            previousTotalSteps = currentSteps
+                        }
+                        // 今日の歩数を計算して更新
+                        viewModel.updateStepCount(
+                            max(currentSteps - previousTotalSteps, 0f).toInt()
+                        )
                     }
 
                     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
