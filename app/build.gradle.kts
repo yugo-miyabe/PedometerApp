@@ -104,6 +104,10 @@ dependencies {
     implementation(projects.feature.home)
     implementation(projects.feature.setting)
     implementation(projects.feature.timeline)
+
+    debugImplementation("com.airbnb.android:showkase:1.0.3")
+    implementation("com.airbnb.android:showkase-annotation:1.0.3")
+    kspDebug("com.airbnb.android:showkase-processor:1.0.3")
 }
 
 detekt {
