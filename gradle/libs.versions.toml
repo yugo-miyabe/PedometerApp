@@ -79,9 +79,15 @@ orbit-compose = { module = "org.orbit-mvi:orbit-compose", version.ref = "orbitCo
 orbit-core = { module = "org.orbit-mvi:orbit-core", version.ref = "orbitCore" }
 orbit-test = { module = "org.orbit-mvi:orbit-test", version.ref = "orbitTest" }
 orbit-viewmodel = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbitViewmodel" }
+testng = { group = "org.testng", name = "testng", version.ref = "testng" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-fitness = { group = "com.google.android.gms", name = "play-services-fitness", version.ref = "playServicesFitness" }
+showkase-processor = { module = "com.airbnb.android:showkase-processor", version.ref = "showkaseProcessor" }
+showkase-annotation = { module = "com.airbnb.android:showkase-annotation", version.ref = "showkaseAnnotation" }
+showkase = { module = "com.airbnb.android:showkase", version.ref = "showkase" }
+roborazzi = { module = "io.github.takahirom.roborazzi:roborazzi", version.ref = "roborazziVersion" }
+roborazzi-compose = { module = "io.github.takahirom.roborazzi:roborazzi-compose", version.ref = "roborazziCompose" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

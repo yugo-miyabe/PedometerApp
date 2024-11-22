@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -44,6 +45,11 @@ android {
         // 本番
         create("product") {
             dimension = "environment"
+        }
+    }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
         }
     }
     compileOptions {
@@ -94,6 +100,8 @@ dependencies {
     implementation(libs.timber)
     detektPlugins(libs.detekt.formatting)
     implementation(libs.kotlinx.serialization.json)
+    testImplementation(libs.roborazzi)
+    testImplementation(libs.roborazzi.compose)
 
     implementation(projects.core.ui)
     implementation(projects.core.common)
@@ -104,10 +112,6 @@ dependencies {
     implementation(projects.feature.home)
     implementation(projects.feature.setting)
     implementation(projects.feature.timeline)
-
-    debugImplementation("com.airbnb.android:showkase:1.0.3")
-    implementation("com.airbnb.android:showkase-annotation:1.0.3")
-    kspDebug("com.airbnb.android:showkase-processor:1.0.3")
 }
 
 detekt {
