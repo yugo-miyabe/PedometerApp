@@ -6,7 +6,6 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -100,8 +99,6 @@ dependencies {
     implementation(libs.timber)
     detektPlugins(libs.detekt.formatting)
     implementation(libs.kotlinx.serialization.json)
-    testImplementation(libs.roborazzi)
-    testImplementation(libs.roborazzi.compose)
 
     implementation(projects.core.ui)
     implementation(projects.core.common)

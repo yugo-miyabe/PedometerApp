@@ -19,6 +19,7 @@ buildscript {
     }
     dependencies {
         classpath(libs.detekt.gradle.plugin)
+        classpath ("io.github.takahirom.roborazzi:roborazzi-gradle-plugin:1.26.0")
     }
 }
 
