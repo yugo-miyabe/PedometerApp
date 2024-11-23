@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -95,9 +96,15 @@ dependencies {
     detektPlugins(libs.detekt.formatting)
     implementation(libs.kotlinx.serialization.json)
 
+    // showkase
     debugImplementation(libs.showkase)
     implementation(libs.showkase.annotation)
     kspDebug(libs.showkase.processor)
+
+    // robolectric
+    testImplementation(libs.robolectric)
+    implementation(libs.roborazzi)
+    implementation(libs.roborazzi.compose)
 
     implementation(projects.core.ui)
     implementation(projects.core.common)
@@ -114,4 +121,8 @@ detekt {
     config.setFrom("${rootProject.projectDir}/config/detekt/detekt.yml")
     autoCorrect = true
     buildUponDefaultConfig = true
+}
+
+ksp {
+    arg("skipPrivatePreviews", "true")
 }

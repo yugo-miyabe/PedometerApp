@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -33,6 +35,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -55,6 +62,24 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.material.icons.extended)
 
+    testImplementation(libs.junit)
+
+    implementation(libs.core)
+
+    // robolectric
+    testImplementation(libs.robolectric)
+    implementation(libs.roborazzi)
+    implementation(libs.roborazzi.compose)
+
+    // showkase
+    debugImplementation(libs.showkase)
+    implementation(libs.showkase.annotation)
+    kspDebug(libs.showkase.processor)
+
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
+}
+
+ksp {
+    arg("skipPrivatePreviews", "true")
 }

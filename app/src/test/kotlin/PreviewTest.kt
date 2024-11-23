@@ -3,12 +3,12 @@ import com.airbnb.android.showkase.models.ShowkaseBrowserComponent
 import com.github.takahirom.roborazzi.DEFAULT_ROBORAZZI_OUTPUT_DIR_PATH
 import com.github.takahirom.roborazzi.RobolectricDeviceQualifiers
 import com.github.takahirom.roborazzi.captureRoboImage
+import jp.yuyuyu.pedometerapp.getMetadata
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.ParameterizedRobolectricTestRunner
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
-//import jp.yuyuyu.ui.getMetadata
 
 @RunWith(ParameterizedRobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
@@ -27,7 +27,6 @@ class PreviewTest(
         }
     }
 
-/*
     companion object {
         @ParameterizedRobolectricTestRunner.Parameters
         @JvmStatic
@@ -37,5 +36,4 @@ class PreviewTest(
             }
         }
     }
-*/
 }
