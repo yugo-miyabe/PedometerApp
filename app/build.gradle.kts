@@ -95,6 +95,10 @@ dependencies {
     detektPlugins(libs.detekt.formatting)
     implementation(libs.kotlinx.serialization.json)
 
+    debugImplementation(libs.showkase)
+    implementation(libs.showkase.annotation)
+    kspDebug(libs.showkase.processor)
+
     implementation(projects.core.ui)
     implementation(projects.core.common)
     implementation(projects.core.designsystem)

@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.compose.compiler) apply false
+    alias(libs.plugins.roborazzi) apply false
     alias(libs.plugins.detekt)
 }
 
@@ -18,6 +19,7 @@ buildscript {
     }
     dependencies {
         classpath(libs.detekt.gradle.plugin)
+        classpath ("io.github.takahirom.roborazzi:roborazzi-gradle-plugin:1.26.0")
     }
 }
 
