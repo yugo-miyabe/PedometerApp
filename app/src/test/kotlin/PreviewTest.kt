@@ -12,7 +12,7 @@ import org.robolectric.annotation.GraphicsMode
 
 @RunWith(ParameterizedRobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
-@Config(qualifiers = RobolectricDeviceQualifiers.Pixel7Pro)
+@Config(qualifiers = RobolectricDeviceQualifiers.Pixel7)
 class PreviewTest(
     private val showkaseBrowserComponent: ShowkaseBrowserComponent,
 ) {
@@ -23,11 +23,13 @@ class PreviewTest(
         captureRoboImage(
             filePath,
         ) {
+            // ここが実行されてない
             showkaseBrowserComponent.component()
         }
     }
 
     companion object {
+
         @ParameterizedRobolectricTestRunner.Parameters
         @JvmStatic
         fun components(): Iterable<Array<Any?>> {

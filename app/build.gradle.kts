@@ -66,6 +66,11 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -102,7 +107,7 @@ dependencies {
     kspDebug(libs.showkase.processor)
 
     // robolectric
-    testImplementation(libs.robolectric)
+    implementation(libs.robolectric)
     implementation(libs.roborazzi)
     implementation(libs.roborazzi.compose)
 

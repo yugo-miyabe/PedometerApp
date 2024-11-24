@@ -81,7 +81,7 @@ fun TutorialTemplate(
 
 @PreviewDynamicTheme
 @Composable
-private fun TutorialPreview() {
+fun TutorialPreview() {
     PedometerAppTheme {
         Surface {
             TutorialTemplate(onNext = { /* preview */ })

@@ -87,7 +87,7 @@ fun ListItemSwitch(
 
 @PreviewDynamicTheme
 @Composable
-private fun ListItemPreview() {
+fun ListItemPreview() {
     PedometerAppTheme {
         Surface {
             Column {
@@ -113,7 +113,7 @@ private fun ListItemPreview() {
 
 @PreviewDynamicTheme
 @Composable
-private fun ListItemSwitchPreview() {
+fun ListItemSwitchPreview() {
     PedometerAppTheme {
         Surface {
             Column {

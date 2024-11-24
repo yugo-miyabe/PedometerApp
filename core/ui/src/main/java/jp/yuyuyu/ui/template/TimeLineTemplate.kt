@@ -48,7 +48,7 @@ fun TimeLineTemplate() {
 
 @PreviewDynamicTheme
 @Composable
-private fun HomePreview() {
+fun TimeLine_Preview() {
     PedometerAppTheme {
         Surface {
             TimeLineTemplate()

@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import dagger.hilt.android.AndroidEntryPoint
@@ -58,5 +59,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 fun GreetingPreview() {
     PedometerAppTheme {
         Greeting("Android")
+    }
+}
+
+@Preview
+@Composable
+fun GreetingTssePreview() {
+    PedometerAppTheme {
+        Greeting("こんにちは")
     }
 }

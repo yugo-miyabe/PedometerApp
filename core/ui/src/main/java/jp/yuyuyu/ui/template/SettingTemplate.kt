@@ -94,7 +94,7 @@ fun SettingTemplate() {
 
 @PreviewDynamicTheme
 @Composable
-private fun Setting_Preview() {
+fun Setting_Preview() {
     PedometerAppTheme {
         Surface {
             SettingTemplate()

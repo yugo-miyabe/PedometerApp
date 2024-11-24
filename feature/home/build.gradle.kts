@@ -75,7 +75,3 @@ dependencies {
     implementation(libs.showkase.annotation)
     kspDebug(libs.showkase.processor)
 }
-
-ksp {
-    arg("skipPrivatePreviews", "true")
-}

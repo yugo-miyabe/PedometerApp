@@ -89,7 +89,7 @@ fun HomeTemplate(
 
 @PreviewDynamicTheme
 @Composable
-private fun HomePreview() {
+fun HomePreview() {
     PedometerAppTheme {
         Surface {
             HomeTemplate(

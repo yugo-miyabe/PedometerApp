@@ -9,7 +9,7 @@ import org.robolectric.ParameterizedRobolectricTestRunner
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
 //import jp.yuyuyu.ui.getMetadata
-
+/*
 @RunWith(ParameterizedRobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 @Config(qualifiers = RobolectricDeviceQualifiers.Pixel7Pro)
@@ -39,3 +39,4 @@ class PreviewTest(
     }
 */
 }
+*/
