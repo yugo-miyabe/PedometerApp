@@ -66,15 +66,15 @@ dependencies {
 
     implementation(libs.core)
 
-    // robolectric
-    testImplementation(libs.robolectric)
-    implementation(libs.roborazzi)
-    implementation(libs.roborazzi.compose)
-
     // showkase
     debugImplementation(libs.showkase)
     implementation(libs.showkase.annotation)
     kspDebug(libs.showkase.processor)
+
+    // robolectric
+    implementation(libs.robolectric)
+    implementation(libs.roborazzi)
+    implementation(libs.roborazzi.compose)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
