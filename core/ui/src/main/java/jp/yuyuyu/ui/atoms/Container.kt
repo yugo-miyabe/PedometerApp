@@ -41,7 +41,7 @@ fun BottomButton(
 
 @PreviewDynamicTheme
 @Composable
-fun BottomButtonPreview() {
+private fun BottomButtonPreview() {
     PedometerAppTheme {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
