@@ -85,6 +85,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.material3.adaptive.navigation.suite.android)
     implementation(libs.androidx.material.icons.extended)
+    implementation(libs.androidx.ui.test.junit4.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -110,6 +111,7 @@ dependencies {
     implementation(libs.robolectric)
     implementation(libs.roborazzi)
     implementation(libs.roborazzi.compose)
+    testImplementation(libs.roborazzi.junit.rule)
 
     implementation(projects.core.ui)
     implementation(projects.core.common)

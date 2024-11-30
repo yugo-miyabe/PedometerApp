@@ -1,3 +1,4 @@
+
 import com.airbnb.android.showkase.models.Showkase
 import com.airbnb.android.showkase.models.ShowkaseBrowserComponent
 import com.github.takahirom.roborazzi.DEFAULT_ROBORAZZI_OUTPUT_DIR_PATH
@@ -26,7 +27,7 @@ class PreviewTest(
             taskType = RoborazziTaskType.Record
         )
         val filePath =
-            DEFAULT_ROBORAZZI_OUTPUT_DIR_PATH + "/" + showkaseBrowserComponent.componentKey + ".png"
+            DEFAULT_ROBORAZZI_OUTPUT_DIR_PATH + "/recode/" + showkaseBrowserComponent.componentKey + ".png"
         captureRoboImage(
             filePath = filePath,
             roborazziOptions = roborazziOptions,
