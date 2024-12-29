@@ -12,8 +12,8 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import dagger.hilt.android.AndroidEntryPoint
-import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.pedometerapp.navigation.PedometerNavHost
+import jp.yuyuyu.ui.theme.PedometerAppTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -28,16 +28,12 @@ class MainActivity : ComponentActivity() {
                 CompositionLocalProvider {
                     Scaffold(
                         modifier = Modifier.fillMaxSize(),
-                        contentWindowInsets = WindowInsets(0.dp)
+                        contentWindowInsets = WindowInsets(0.dp),
                     ) {
                         PedometerNavHost()
                     }
                 }
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 }
