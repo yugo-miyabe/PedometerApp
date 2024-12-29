@@ -1,4 +1,4 @@
-package jp.yuyuyu.ui.atoms
+package jp.yuyuyu.ui.organisms
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -13,12 +13,15 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
+import jp.yuyuyu.common.R
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
+import jp.yuyuyu.ui.atoms.Text
+import jp.yuyuyu.ui.theme.PedometerTypography
 
 @Composable
 fun BottomButton(
@@ -51,7 +54,12 @@ private fun BottomButtonPreview() {
                         Button(
                             modifier = Modifier.fillMaxWidth(),
                             onClick = { /* preview */ },
-                            content = { Text("次へ") }
+                            content = {
+                                Text(
+                                    text = stringResource(R.string.tutorial_next),
+                                    style = PedometerTypography.labelLarge
+                                )
+                            }
                         )
                     }
                 )
