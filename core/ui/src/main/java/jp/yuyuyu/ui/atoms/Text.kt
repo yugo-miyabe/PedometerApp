@@ -2,8 +2,7 @@ package jp.yuyuyu.ui.atoms
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import jp.yuyuyu.ui.theme.PedometerTypography
-import java.time.format.TextStyle
+import androidx.compose.ui.text.TextStyle
 
 @Composable
 fun Text(
@@ -13,5 +12,5 @@ fun Text(
 ) = androidx.compose.material3.Text(
     text = text,
     modifier = modifier,
-    style = PedometerTypography.bodyMedium
+    style = style
 )

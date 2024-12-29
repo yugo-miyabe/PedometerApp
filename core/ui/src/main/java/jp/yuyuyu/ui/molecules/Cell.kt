@@ -13,14 +13,14 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
-import jp.yuyuyu.ui.util.PreviewDynamicTheme
+import jp.yuyuyu.ui.atoms.Text
+import jp.yuyuyu.ui.theme.PedometerTypography
 
 @Composable
 fun ListItem(
@@ -45,7 +45,10 @@ fun ListItem(
                 .padding(horizontal = 16.dp, vertical = 16.dp)
                 .fillMaxWidth()
         ) {
-            Text(text)
+            Text(
+                text = text,
+                style = PedometerTypography.bodyMedium,
+            )
         }
     }
 }
@@ -75,7 +78,11 @@ fun ListItemSwitch(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(text, modifier = Modifier.padding(vertical = 16.dp))
+            Text(
+                text = text,
+                modifier = Modifier.padding(vertical = 16.dp),
+                style = PedometerTypography.bodyMedium
+            )
 
             Spacer(modifier = Modifier.width(16.dp))
 
