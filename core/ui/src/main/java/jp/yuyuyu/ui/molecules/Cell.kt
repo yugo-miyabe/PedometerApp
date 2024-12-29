@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.util.PreviewDynamicTheme
@@ -30,7 +31,8 @@ fun ListItem(
     onClicked: () -> Unit
 ) {
     Card(
-        onClick = onClicked, modifier = modifier,
+        modifier = modifier,
+        onClick = onClicked,
         shape = RoundedCornerShape(
             topStart = if (isTop) 12.dp else 2.dp,
             topEnd = if (isTop) 12.dp else 2.dp,
@@ -85,7 +87,7 @@ fun ListItemSwitch(
     }
 }
 
-@PreviewDynamicTheme
+@PreviewLightDark
 @Composable
 private fun ListItemPreview() {
     PedometerAppTheme {
@@ -111,7 +113,7 @@ private fun ListItemPreview() {
     }
 }
 
-@PreviewDynamicTheme
+@PreviewLightDark
 @Composable
 private fun ListItemSwitchPreview() {
     PedometerAppTheme {

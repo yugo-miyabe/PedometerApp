@@ -71,7 +71,7 @@ fun PedometerAppTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = PedometerTypography,
         content = content
     )
 }
