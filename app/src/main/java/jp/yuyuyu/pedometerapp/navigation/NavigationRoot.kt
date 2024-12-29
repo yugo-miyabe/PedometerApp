@@ -43,10 +43,17 @@ fun NavigationBottomRootPage() {
                 PedometerBottomNavigation.entries.forEach { item ->
                     NavigationBarItem(
                         icon = {
-                            Icon(
-                                item.selectedIcon,
-                                contentDescription = null
-                            )
+                            if (currentRoute == item.route) {
+                                Icon(
+                                    item.selectedIcon,
+                                    contentDescription = null
+                                )
+                            } else {
+                                Icon(
+                                    item.unselectedIcon,
+                                    contentDescription = null
+                                )
+                            }
                         },
                         label = { Text(stringResource(item.titleTextId)) },
                         selected = currentRoute == item.route,
