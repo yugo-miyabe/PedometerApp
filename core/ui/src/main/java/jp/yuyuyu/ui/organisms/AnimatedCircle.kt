@@ -18,8 +18,8 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 
 // TODO 修正する
@@ -104,7 +104,7 @@ fun AnimatedCircle(
 private enum class AnimatedCircleProgress { START, END }
 
 @Composable
-@PreviewDynamicTheme
+@PreviewLightDark
 @Suppress("MagicNumber")
 private fun AnimatedCirclePreview() {
     AnimatedCircle(

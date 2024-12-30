@@ -18,10 +18,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.organisms.AnimatedCircle
-import jp.yuyuyu.ui.util.PreviewDynamicTheme
 
 @Composable
 fun HomeTemplate(
@@ -52,7 +52,8 @@ fun HomeTemplate(
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding),
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp),
             contentPadding = insetsPadding
         ) {
             item {
@@ -87,7 +88,7 @@ fun HomeTemplate(
     }
 }
 
-@PreviewDynamicTheme
+@PreviewLightDark
 @Composable
 private fun HomePreview() {
     PedometerAppTheme {
