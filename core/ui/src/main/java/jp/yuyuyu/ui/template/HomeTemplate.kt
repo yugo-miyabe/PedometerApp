@@ -48,14 +48,18 @@ fun HomeTemplate(
                 Spacer(Modifier.height(20.dp))
             }
             item {
-                Text(text = "Home_2")
+                Text(modifier = Modifier.height(150.dp), text = "Home_2")
+                Text(modifier = Modifier.height(150.dp), text = "Home_2")
             }
             item {
-                Text(text = "Home_3")
+                Text(modifier = Modifier.height(150.dp), text = "Home_2")
+                Text(modifier = Modifier.height(150.dp), text = "Home_2")
             }
             item {
-                Text(text = "Home_4")
+                Text(modifier = Modifier.height(150.dp), text = "Home_2")
+                Text(modifier = Modifier.height(150.dp), text = "Home_2")
             }
+
             item {
                 Button(onClick = onClick) {
                     Text(text = "Button")
