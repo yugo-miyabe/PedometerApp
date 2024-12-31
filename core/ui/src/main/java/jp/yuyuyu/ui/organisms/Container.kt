@@ -19,8 +19,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.common.R
-import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.atoms.Text
+import jp.yuyuyu.ui.theme.PedometerAppTheme
 import jp.yuyuyu.ui.theme.PedometerTypography
 
 @Composable

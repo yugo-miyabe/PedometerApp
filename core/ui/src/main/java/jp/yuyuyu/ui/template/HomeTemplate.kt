@@ -20,8 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.organisms.AnimatedCircle
+import jp.yuyuyu.ui.theme.PedometerAppTheme
 
 @Composable
 fun HomeTemplate(
