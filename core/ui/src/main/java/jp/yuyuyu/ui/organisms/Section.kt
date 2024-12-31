@@ -27,7 +27,7 @@ fun StepCount(stepCount: String) {
         Text(
             modifier = Modifier.padding(horizontal = 12.dp),
             text = stringResource(R.string.today),
-            style = PedometerTypography.titleSmall
+            style = PedometerTypography.titleLarge
         )
         Spacer(modifier = Modifier.height(24.dp))
         Text(
@@ -36,10 +36,9 @@ fun StepCount(stepCount: String) {
                 .fillMaxWidth(),
             text = stepCount,
             textAlign = TextAlign.End,
-            style = PedometerTypography.headlineLarge
+            style = PedometerTypography.displayLarge
         )
         Spacer(modifier = Modifier.height(16.dp))
-
     }
 }
 
@@ -47,6 +46,6 @@ fun StepCount(stepCount: String) {
 @Composable
 private fun StepCount_Preview() {
     PedometerAppTheme {
-        StepCount(stepCount = "100")
+        StepCount(stepCount = "150000")
     }
 }
