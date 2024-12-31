@@ -49,6 +49,6 @@ fun StepCount(stepCount: String) {
 @Composable
 private fun StepCount_Preview() {
     PedometerAppTheme {
-        StepCount(stepCount = "150000")
+        StepCount(stepCount = "1,500,000")
     }
 }

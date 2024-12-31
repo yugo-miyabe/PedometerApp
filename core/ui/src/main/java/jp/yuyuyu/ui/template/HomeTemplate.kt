@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.ui.organisms.StepCount
 import jp.yuyuyu.ui.theme.PedometerAppTheme
+import jp.yuyuyu.ui.util.extension.toCommaSeparated
 
 @Composable
 fun HomeTemplate(
@@ -43,7 +44,7 @@ fun HomeTemplate(
         ) {
             item {
                 Spacer(Modifier.height(20.dp))
-                StepCount(stepCount = todayStep.toString())
+                StepCount(stepCount = todayStep.toCommaSeparated())
                 Spacer(Modifier.height(20.dp))
             }
             item {
