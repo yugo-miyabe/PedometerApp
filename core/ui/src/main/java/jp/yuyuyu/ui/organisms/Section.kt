@@ -1,5 +1,6 @@
 package jp.yuyuyu.ui.organisms
 
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -21,7 +22,7 @@ import jp.yuyuyu.ui.theme.PedometerTypography
 fun StepCount(stepCount: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(6.dp),
+        shape = RoundedCornerShape(16.dp),
     ) {
         Spacer(modifier = Modifier.height(16.dp))
         Text(
@@ -30,14 +31,16 @@ fun StepCount(stepCount: String) {
             style = PedometerTypography.titleLarge
         )
         Spacer(modifier = Modifier.height(24.dp))
-        Text(
-            modifier = Modifier
-                .padding(horizontal = 16.dp)
-                .fillMaxWidth(),
-            text = stepCount,
-            textAlign = TextAlign.End,
-            style = PedometerTypography.displayLarge
-        )
+        Row {
+            Text(
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
+                    .fillMaxWidth(),
+                text = stepCount,
+                textAlign = TextAlign.End,
+                style = PedometerTypography.displayLarge
+            )
+        }
         Spacer(modifier = Modifier.height(16.dp))
     }
 }

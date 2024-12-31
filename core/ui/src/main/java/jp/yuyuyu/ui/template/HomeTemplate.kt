@@ -33,7 +33,7 @@ fun HomeTemplate(
             WindowInsets.systemBars.only(
                 WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom
             ).asPaddingValues()
-        
+
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -44,6 +44,7 @@ fun HomeTemplate(
             item {
                 Spacer(Modifier.height(20.dp))
                 StepCount(stepCount = todayStep.toString())
+                Spacer(Modifier.height(20.dp))
             }
             item {
                 Text(text = "Home_2")
@@ -69,7 +70,7 @@ private fun HomePreview() {
     PedometerAppTheme {
         Surface {
             HomeTemplate(
-                todayStep = 100,
+                todayStep = 150000,
                 onClick = {/* preview */ }
             )
         }
