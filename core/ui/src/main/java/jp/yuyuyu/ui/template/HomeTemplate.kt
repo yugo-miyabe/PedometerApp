@@ -59,7 +59,6 @@ fun HomeTemplate(
                 Text(modifier = Modifier.height(150.dp), text = "Home_2")
                 Text(modifier = Modifier.height(150.dp), text = "Home_2")
             }
-
             item {
                 Button(onClick = onClick) {
                     Text(text = "Button")
