@@ -40,7 +40,9 @@ fun TutorialTemplate(
             BottomButton(
                 content = {
                     Button(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 20.dp),
                         onClick = onNext,
                         content = {
                             Text(
