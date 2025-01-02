@@ -11,7 +11,28 @@ import androidx.compose.ui.unit.sp
 private val robotoBlack = FontFamily(Font(jp.yuyuyu.ui.R.font.roboto_black))
 
 @Stable
-internal val Typography = Typography(
+internal val PedometerTypography = Typography(
+    displayLarge = TextStyle(
+        fontFamily = robotoBlack,
+        fontWeight = FontWeight.Normal,
+        fontSize = 57.sp,
+        lineHeight = 64.sp,
+        letterSpacing = 0.25.sp
+    ),
+    displayMedium = TextStyle(
+        fontFamily = robotoBlack,
+        fontWeight = FontWeight.Normal,
+        fontSize = 45.sp,
+        lineHeight = 52.sp,
+        letterSpacing = 0.25.sp
+    ),
+    displaySmall = TextStyle(
+        fontFamily = robotoBlack,
+        fontWeight = FontWeight.Normal,
+        fontSize = 36.sp,
+        lineHeight = 44.sp,
+        letterSpacing = 0.25.sp
+    ),
     headlineLarge = TextStyle(
         fontFamily = robotoBlack,
         fontWeight = FontWeight.Normal,
