@@ -57,6 +57,6 @@ fun HomeScreen(
 
     HomeTemplate(
         todayStep = state.stepCount,
-        onClick = onSettingClick
+        onSettingClick = onSettingClick
     )
 }

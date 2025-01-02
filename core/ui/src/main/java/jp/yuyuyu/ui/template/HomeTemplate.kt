@@ -10,7 +10,11 @@ import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -19,15 +23,28 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.ui.organisms.StepCount
+import jp.yuyuyu.ui.organisms.TopBar
 import jp.yuyuyu.ui.theme.PedometerAppTheme
 import jp.yuyuyu.ui.util.extension.toCommaSeparated
 
 @Composable
 fun HomeTemplate(
     todayStep: Int,
-    onClick: () -> Unit
+    onSettingClick: () -> Unit
 ) {
     Scaffold(
+        topBar = {
+            TopBar(
+                actions = {
+                    IconButton(onClick = onSettingClick) {
+                        Icon(
+                            imageVector = Icons.Default.Settings,
+                            contentDescription = null,
+                        )
+                    }
+                }
+            )
+        },
         modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
         val insetsPadding =
@@ -60,7 +77,7 @@ fun HomeTemplate(
                 Text(modifier = Modifier.height(150.dp), text = "Home_2")
             }
             item {
-                Button(onClick = onClick) {
+                Button(onClick = onSettingClick) {
                     Text(text = "Button")
                 }
             }
@@ -75,7 +92,7 @@ private fun HomePreview() {
         Surface {
             HomeTemplate(
                 todayStep = 150000,
-                onClick = {/* preview */ }
+                onSettingClick = {/* preview */ }
             )
         }
     }
