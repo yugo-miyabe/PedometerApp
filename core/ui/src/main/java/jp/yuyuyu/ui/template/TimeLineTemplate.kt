@@ -13,8 +13,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import jp.yuyuyu.designsystem.theme.PedometerAppTheme
-import jp.yuyuyu.ui.util.PreviewDynamicTheme
+import androidx.compose.ui.tooling.preview.PreviewLightDark
+import jp.yuyuyu.ui.theme.PedometerAppTheme
 
 @Composable
 fun TimeLineTemplate() {
@@ -46,7 +46,7 @@ fun TimeLineTemplate() {
     }
 }
 
-@PreviewDynamicTheme
+@PreviewLightDark
 @Composable
 private fun HomePreview() {
     PedometerAppTheme {

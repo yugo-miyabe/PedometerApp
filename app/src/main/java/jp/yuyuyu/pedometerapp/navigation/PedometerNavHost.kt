@@ -1,11 +1,13 @@
 package jp.yuyuyu.pedometerapp.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navOptions
+import jp.yuyuyu.home.navigation.homeNavGraph
+import jp.yuyuyu.home.navigation.navigateToHome
+import jp.yuyuyu.setting.navigation.navigationToSetting
+import jp.yuyuyu.setting.navigation.settingNavGraph
 import jp.yuyuyu.tutorial.navigation.TutorialRoute
 import jp.yuyuyu.tutorial.navigation.tutorialNavGraph
 
@@ -15,18 +17,21 @@ fun PedometerNavHost() {
     NavHost(
         navController = navController,
         startDestination = TutorialRoute,
-        modifier = Modifier
     ) {
         tutorialNavGraph(
             onNext = {
-                navController.navigate(
-                    route = BottomNavigationRoute,
-                    navOptions = navOptions {
-                        popUpTo(TutorialRoute) { inclusive = true }
-                    }
-                )
+                navController.navigateToHome(builder = {
+                    popUpTo(TutorialRoute) { inclusive = true }
+                })
             }
         )
-        navigationRootNavGraph()
+        homeNavGraph(
+            navController = navController,
+            navigationToSetting = {
+                navController.navigationToSetting()
+            }
+        )
+        // timeLineNavGraph()
+        settingNavGraph(navController = navController)
     }
 }

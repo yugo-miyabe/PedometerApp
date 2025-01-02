@@ -17,12 +17,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import jp.yuyuyu.common.R
-import jp.yuyuyu.designsystem.theme.PedometerAppTheme
 import jp.yuyuyu.ui.molecules.ListItem
 import jp.yuyuyu.ui.molecules.ListItemSwitch
-import jp.yuyuyu.ui.util.PreviewDynamicTheme
+import jp.yuyuyu.ui.theme.PedometerAppTheme
 
 @Composable
 fun SettingTemplate() {
@@ -92,7 +92,7 @@ fun SettingTemplate() {
 }
 
 
-@PreviewDynamicTheme
+@PreviewLightDark
 @Composable
 private fun Setting_Preview() {
     PedometerAppTheme {
