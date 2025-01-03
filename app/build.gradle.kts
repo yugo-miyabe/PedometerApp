@@ -108,6 +108,6 @@ dependencies {
 
 detekt {
     config.setFrom("${rootProject.projectDir}/config/detekt/detekt.yml")
-    buildUponDefaultConfig = true
     autoCorrect = true
+    buildUponDefaultConfig = true
 }
