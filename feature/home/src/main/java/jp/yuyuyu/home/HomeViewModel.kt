@@ -7,6 +7,7 @@ import androidx.health.connect.client.time.TimeRangeFilter
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import jp.yuyuyu.usecase.UpdateStepUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
@@ -21,10 +22,13 @@ import java.time.ZoneId
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor() : ContainerHost<HomeState, HomeSideEffect>, ViewModel() {
+class HomeViewModel @Inject constructor(
+    updateStep: UpdateStepUseCase
+) : ContainerHost<HomeState, HomeSideEffect>, ViewModel() {
     override val container = container<HomeState, HomeSideEffect>(HomeState())
 
     init {
+        updateStep
         intent {
             postSideEffect(HomeSideEffect.RequestStepData)
         }
