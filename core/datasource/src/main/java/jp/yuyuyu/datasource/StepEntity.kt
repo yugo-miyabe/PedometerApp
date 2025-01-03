@@ -4,9 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import java.util.Date
 
-@Entity(
-    tableName = "step_master"
-)
+@Entity(tableName = "step_master_table")
 data class StepEntity(
     @ColumnInfo(name = "step")
     val step: Int,

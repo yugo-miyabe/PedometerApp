@@ -46,4 +46,7 @@ dependencies {
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
     detektPlugins(libs.detekt.formatting)
+    implementation(libs.hilt.android)
+    ksp(libs.dagger.compiler)
+    ksp(libs.hilt.compiler)
 }
