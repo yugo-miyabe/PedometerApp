@@ -18,7 +18,9 @@ import org.orbitmvi.orbit.viewmodel.container
 import timber.log.Timber
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
 @HiltViewModel
@@ -26,6 +28,8 @@ class HomeViewModel @Inject constructor(
     private val updateStep: UpdateStepUseCase
 ) : ContainerHost<HomeState, HomeSideEffect>, ViewModel() {
     override val container = container<HomeState, HomeSideEffect>(HomeState())
+    private val currentDateTime = LocalDateTime.now()
+    private val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
 
     init {
         intent {
@@ -34,8 +38,9 @@ class HomeViewModel @Inject constructor(
     }
 
     fun updateStepData(stepCount: Int) {
+        val formattedDateTime = currentDateTime.format(formatter)
         viewModelScope.launch(Dispatchers.Default) {
-            updateStep(stepCount = stepCount, date = "2025/01/05")
+            updateStep(stepCount = stepCount, date = formattedDateTime)
         }
     }
 
