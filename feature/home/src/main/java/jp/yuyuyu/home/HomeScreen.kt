@@ -57,6 +57,7 @@ fun HomeScreen(
 
     HomeTemplate(
         todayStep = state.stepCount,
+        updateStep = viewModel::updateStepData,
         onSettingClick = onSettingClick
     )
 }

@@ -30,7 +30,8 @@ import jp.yuyuyu.ui.util.extension.toCommaSeparated
 @Composable
 fun HomeTemplate(
     todayStep: Int,
-    onSettingClick: () -> Unit
+    updateStep: () -> Unit,
+    onSettingClick: () -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -77,7 +78,7 @@ fun HomeTemplate(
                 Text(modifier = Modifier.height(150.dp), text = "Home_2")
             }
             item {
-                Button(onClick = onSettingClick) {
+                Button(onClick = updateStep) {
                     Text(text = "Button")
                 }
             }
@@ -92,6 +93,7 @@ private fun HomePreview() {
         Surface {
             HomeTemplate(
                 todayStep = 150000,
+                updateStep = { /* preview */ },
                 onSettingClick = {/* preview */ }
             )
         }

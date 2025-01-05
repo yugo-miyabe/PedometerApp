@@ -59,9 +59,6 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.androidx.connect.client)
     implementation(libs.kotlinx.serialization.json)
-
-    implementation(projects.core.common)
-    implementation(projects.core.ui)
     // orbit
     implementation(libs.orbit.core)
     implementation(libs.orbit.viewmodel)
@@ -70,4 +67,7 @@ dependencies {
     // lifecycle-runtime-compose
     implementation(libs.androidx.lifecycle.runtime.compose)
 
+    implementation(projects.core.common)
+    implementation(projects.core.ui)
+    implementation(projects.core.usecase)
 }
