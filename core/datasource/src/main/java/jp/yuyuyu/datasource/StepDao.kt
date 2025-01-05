@@ -11,8 +11,10 @@ interface StepDao {
     @Insert
     suspend fun insert(stepEntity: StepEntity)
 
+    /*
     @Query("SELECT * FROM step_master_table")
-    fun getStepToday()
+    suspend fun getStepToday(): StepEntity
+    */
 
     @Delete
     suspend fun delete(stepEntity: StepEntity)

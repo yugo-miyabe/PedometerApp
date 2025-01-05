@@ -23,14 +23,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    updateStep: UpdateStepUseCase
+    private val updateStep: UpdateStepUseCase
 ) : ContainerHost<HomeState, HomeSideEffect>, ViewModel() {
     override val container = container<HomeState, HomeSideEffect>(HomeState())
 
     init {
-        updateStep
         intent {
             postSideEffect(HomeSideEffect.RequestStepData)
+        }
+    }
+
+    fun updateStepData() {
+        viewModelScope.launch(Dispatchers.Default) {
+            updateStep(5, "2025/01/05")
         }
     }
 
