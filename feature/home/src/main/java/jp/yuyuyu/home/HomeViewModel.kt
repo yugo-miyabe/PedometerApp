@@ -33,9 +33,9 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun updateStepData() {
+    fun updateStepData(stepCount: Int) {
         viewModelScope.launch(Dispatchers.Default) {
-            updateStep(5, "2025/01/05")
+            updateStep(stepCount = stepCount, date = "2025/01/05")
         }
     }
 
