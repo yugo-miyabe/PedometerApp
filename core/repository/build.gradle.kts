@@ -46,4 +46,5 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     implementation(projects.core.datasource)
+    implementation(projects.core.model)
 }

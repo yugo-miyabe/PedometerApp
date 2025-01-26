@@ -45,4 +45,5 @@ dependencies {
     implementation(libs.hilt.android)
     
     implementation(projects.core.repository)
+    implementation(projects.core.model)
 }

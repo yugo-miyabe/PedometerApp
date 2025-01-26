@@ -69,5 +69,6 @@ dependencies {
 
     implementation(projects.core.common)
     implementation(projects.core.ui)
+    implementation(projects.core.model)
     implementation(projects.core.usecase)
 }
